@@ -1,0 +1,1636 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // Connection pooling configuration
+  // These settings optimize connection management for production
+  // connection_limit: Maximum number of connections in the pool (default: 10)
+  // pool_timeout: How long to wait for a connection (default: 20s)
+  // idle_timeout: How long connections can be idle (default: 10s)
+  // connection_limit = 20
+  // pool_timeout = 20
+  // idle_timeout = 10
+}
+
+model Workspace {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  branding  Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  apiToken  String   @unique
+  adminId   String   @unique
+
+  admin                        User                           @relation("AdminUser", fields: [adminId], references: [id], onDelete: Cascade)
+  users                        User[]                         @relation("WorkspaceUsers")
+  roles                        Role[]
+  roleAssignmentHistory        RoleAssignmentHistory[]
+  chatRoom                     ChatRoom[]
+  agentStatus                  AgentStatus[]
+  chatRoutingRule              ChatRoutingRule[]
+  chatPerformanceMetric        ChatPerformanceMetric[]
+  visitorSession               VisitorSession[]
+  visitorAnalytics             VisitorAnalytics[]
+  visitor                      Visitor[]
+  visitorPageTracking          VisitorPageTracking[]
+  widget                       Widget[]
+  departments                  Department[]
+  cannedResponseCategory       CannedResponseCategory[]
+  cannedResponse               CannedResponse[]
+  cannedResponseFolder         CannedResponseFolder[]
+  cannedResponseUserPreference CannedResponseUserPreference[]
+  tag                          Tag[]
+  tagCategory                  TagCategory[]
+  tagUsage                     TagUsage[]
+  userTagPreference            UserTagPreference[]
+  trigger                      Trigger[]
+}
+
+enum DepartmentStatus {
+  AVAILABLE
+  OFFLINE
+  BUSY
+}
+
+model Department {
+  id          String  @id @default(cuid())
+  workspaceId String
+  name        String
+  description String?
+
+  // Basic configuration
+  color    String? // Hex color for UI branding
+  icon     String? // Icon identifier
+  isActive Boolean          @default(false)
+  status   DepartmentStatus @default(OFFLINE)
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  workspace           Workspace             @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  userDepartments     User_Departments[]
+  servedChatRooms     ChatRoom[]            @relation("CurrentServingDepartment")
+  chatRooms           ChatRoom[]            @relation("NonServingDepartments")
+  triggers            Trigger[]
+  triggerExecutionLog TriggerExecutionLog[]
+
+  @@unique([workspaceId, name])
+  @@index([workspaceId])
+  @@index([isActive])
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  PENDING
+}
+
+model User {
+  id          String     @id @default(cuid())
+  name        String
+  email       String     @unique
+  password    String
+  phone       String?
+  workspaceId String?
+  status      UserStatus @default(ACTIVE)
+  avatarUrl   String?
+  roleId      String?
+
+  // Timestamps
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  lastActiveAt DateTime?
+
+  // Role assignment (one role per workspace, can be extended to many-to-many if needed)
+  role                         Role?                          @relation(fields: [roleId], references: [id], onDelete: SetNull)
+  workspace                    Workspace?                     @relation("WorkspaceUsers", fields: [workspaceId], references: [id], onDelete: Cascade)
+  adminOfWorkspace             Workspace?                     @relation("AdminUser")
+  roleAssignments              RoleAssignmentHistory[]        @relation("UserRoleAssignments")
+  assignedRoles                RoleAssignmentHistory[]        @relation("RoleAssigner")
+  primaryAgentRooms            ChatRoom[]                     @relation("PrimaryAgent")
+  chatParticipants             ChatParticipant[]
+  agentStatus                  AgentStatus?
+  performanceMetrics           ChatPerformanceMetric[]
+  chatTransfersFrom            ChatTransfer[]                 @relation("TransferFrom")
+  chatTransfersTo              ChatTransfer[]                 @relation("TransferTo")
+  userDepartments              User_Departments[]
+  chatMessage                  ChatMessage[]
+  cannedResponse               CannedResponse[]
+  cannedResponseUsage          CannedResponseUsage[]
+  cannedResponseFolder         CannedResponseFolder[]
+  cannedResponseUserPreference CannedResponseUserPreference[]
+  tag                          Tag[]
+  tagCategory                  TagCategory[]
+  conversationTag              ConversationTag[]
+  conversationTagRemovedBy     ConversationTag[]              @relation("ConversationTagRemovedBy")
+  userTagPreference            UserTagPreference[]
+  trigger                      Trigger[]
+}
+
+model User_Departments {
+  id           String @id @default(cuid())
+  userId       String
+  departmentId String
+
+  assignedAt     DateTime @default(now())
+  assignedBy     String
+  assignedReason String?
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  department Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, departmentId])
+  @@index([userId])
+  @@index([departmentId])
+  @@index([userId, departmentId])
+}
+
+model Role {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  workspaceId String
+  isSystem    Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  workspace       Workspace               @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  users           User[]
+  rolePermissions RolePermission[]
+  roleAssignments RoleAssignmentHistory[] @relation("AssignedRole")
+
+  @@index([workspaceId])
+}
+
+model Permission {
+  id          String   @id @default(cuid())
+  name        String   @unique // e.g., "user:create", "user:view"
+  description String
+  category    String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  rolePermissions RolePermission[]
+}
+
+model RolePermission {
+  id           String @id @default(cuid())
+  roleId       String
+  permissionId String
+
+  role       Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, permissionId])
+}
+
+model RoleAssignmentHistory {
+  id             String   @id @default(cuid())
+  userId         String
+  roleId         String
+  workspaceId    String
+  assignedBy     String // User ID who made the assignment
+  assignedAt     DateTime @default(now())
+  reason         String? // Optional reason for the assignment
+  previousRoleId String? // Previous role (for role changes)
+  assignmentType String   @default("MANUAL") // MANUAL, SYSTEM, BULK, etc.
+
+  // Relations
+  user           User      @relation("UserRoleAssignments", fields: [userId], references: [id], onDelete: Cascade)
+  role           Role      @relation("AssignedRole", fields: [roleId], references: [id], onDelete: Cascade)
+  workspace      Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  assignedByUser User      @relation("RoleAssigner", fields: [assignedBy], references: [id], onDelete: Cascade)
+
+  @@index([userId, workspaceId])
+  @@index([assignedAt])
+  @@index([workspaceId])
+}
+
+// ============================================================================
+// SESSION & REGISTRATION TABLES
+// ============================================================================
+
+model RegistrationSession {
+  id           String @id @default(cuid())
+  sessionToken String @unique
+
+  // Session context
+  ipAddress         String
+  userAgent         String?
+  deviceFingerprint String?
+
+  // Session lifecycle
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+  abandonedAt DateTime?
+
+  // Registration flow
+  currentStep          String  @default("email") // email, workspace, profile, verification, complete
+  totalSteps           Int     @default(4)
+  completionPercentage Decimal @default(0) @db.Decimal(5, 2)
+
+  // Analytics data
+  pageLoadTime        Int? // milliseconds
+  formInteractionTime Int? // milliseconds
+  totalSessionTime    Int? // milliseconds
+
+  // Geographic and device
+  country          String?
+  city             String?
+  timezone         String?
+  deviceType       String? // desktop, mobile, tablet
+  browser          String?
+  os               String?
+  screenResolution String?
+
+  // Risk and security
+  riskScore Int     @default(0) // 0-100
+  isVpn     Boolean @default(false)
+  isTor     Boolean @default(false)
+  isProxy   Boolean @default(false)
+
+  // Result
+  registrationSuccessful Boolean @default(false)
+  failureReason          String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Related analytics
+  marketingAttributions MarketingAttribution[]
+  securityEvents        SecurityEvent[]
+  performanceMetrics    PerformanceMetric[]
+  formInteractions      FormInteraction[]
+  userBehaviors         UserBehavior[]
+
+  @@index([sessionToken])
+  @@index([ipAddress])
+  @@index([deviceFingerprint])
+  @@index([startedAt])
+  @@index([riskScore])
+}
+
+// ============================================================================
+// MARKETING & ATTRIBUTION TABLES
+// ============================================================================
+
+model MarketingAttribution {
+  id           String @id @default(cuid())
+  sessionToken String @unique
+
+  // Attribution data
+  referrerUrl String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  utmTerm     String?
+  utmContent  String?
+  landingPage String?
+
+  // Campaign tracking
+  campaignId String?
+  adGroupId  String?
+  keyword    String?
+  gclid      String?
+  fbclid     String?
+
+  // Conversion tracking
+  conversionValue    Decimal? @db.Decimal(10, 2)
+  conversionCurrency String?  @default("USD")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  registrationSession RegistrationSession @relation(fields: [sessionToken], references: [sessionToken], onDelete: Cascade)
+
+  @@index([utmSource, utmCampaign])
+  @@index([campaignId])
+}
+
+// ============================================================================
+// SECURITY & RISK TABLES
+// ============================================================================
+
+model SecurityEvent {
+  id           String @id @default(cuid())
+  sessionToken String
+
+  // Event details
+  eventType   String // login_attempt, suspicious_activity, rate_limit, etc.
+  severity    String @default("LOW") // LOW, MEDIUM, HIGH, CRITICAL
+  description String
+
+  // Security context
+  ipAddress         String
+  userAgent         String?
+  deviceFingerprint String?
+  location          Json? // {country, city, coordinates}
+
+  // Risk assessment
+  riskScore         Int   @default(0)
+  threatIndicators  Json? // Array of threat indicators
+  mitigationActions Json? // Array of actions taken
+
+  // Additional data
+  metadata Json?
+
+  createdAt DateTime @default(now())
+
+  // Relations
+  registrationSession RegistrationSession @relation(fields: [sessionToken], references: [sessionToken], onDelete: Cascade)
+
+  @@index([sessionToken])
+  @@index([eventType])
+  @@index([severity])
+  @@index([createdAt])
+  @@index([riskScore])
+}
+
+// ============================================================================
+// PERFORMANCE & TECHNICAL TABLES
+// ============================================================================
+
+model PerformanceMetric {
+  id           String @id @default(cuid())
+  sessionToken String
+
+  // Performance data
+  metricType String // page_load, api_response, database_query, etc.
+  metricName String // specific metric name
+  value      Decimal @db.Decimal(10, 3) // milliseconds or other unit
+  unit       String  @default("ms")
+
+  // Context
+  pageUrl       String?
+  apiEndpoint   String?
+  databaseQuery String?
+
+  // Additional context
+  browser     String?
+  deviceType  String?
+  networkType String?
+
+  createdAt DateTime @default(now())
+
+  // Relations
+  registrationSession RegistrationSession @relation(fields: [sessionToken], references: [sessionToken], onDelete: Cascade)
+
+  @@index([sessionToken])
+  @@index([metricType])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// USER INTERACTION & BEHAVIOR TABLES
+// ============================================================================
+
+model FormInteraction {
+  id           String @id @default(cuid())
+  sessionToken String
+
+  // Field interaction details
+  fieldName       String
+  interactionType String // focus, blur, input, validation_error, submit
+
+  // Timing data
+  timestampMs    BigInt // Milliseconds since session start
+  fieldFocusTime Int? // Milliseconds focused on field
+  typingSpeed    Decimal? @db.Decimal(5, 2) // Characters per second
+
+  // Field completion
+  fieldCompleted   Boolean  @default(false)
+  validationPassed Boolean?
+  errorMessage     String?
+  attemptsCount    Int      @default(1)
+
+  // Input analysis
+  inputLength      Int?
+  backspaceCount   Int     @default(0)
+  pasteDetected    Boolean @default(false)
+  autocompleteUsed Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  // Relations
+  registrationSession RegistrationSession @relation(fields: [sessionToken], references: [sessionToken], onDelete: Cascade)
+
+  @@index([sessionToken])
+  @@index([fieldName])
+  @@index([interactionType])
+  @@index([createdAt])
+}
+
+model UserBehavior {
+  id           String @id @default(cuid())
+  sessionToken String
+
+  // Behavior tracking
+  behaviorType String // scroll, click, hover, navigation, etc.
+  elementId    String?
+  elementClass String?
+  elementText  String?
+
+  // Interaction details
+  coordinates    Json? // {x, y}
+  scrollPosition Json? // {x, y}
+  viewportSize   Json? // {width, height}
+
+  // Timing
+  timestampMs BigInt // Milliseconds since session start
+  duration    Int? // Milliseconds
+
+  // Context
+  pageUrl     String?
+  referrerUrl String?
+
+  createdAt DateTime @default(now())
+
+  // Relations
+  registrationSession RegistrationSession @relation(fields: [sessionToken], references: [sessionToken], onDelete: Cascade)
+
+  @@index([sessionToken])
+  @@index([behaviorType])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// CHAT SYSTEM TABLES
+// ============================================================================
+
+enum ChatWindowStatus {
+  OPEN
+  CLOSED
+  MINIMIZED
+  IN_BACKGROUND
+}
+
+// Group 1: Core Chat Infrastructure
+model ChatRoom {
+  id                         String  @id @default(cuid())
+  workspaceId                String
+  visitorSessionId           String  @unique
+  currentServingDepartmentId String?
+
+  visitorId String
+
+  // Agent assignment
+  primaryAgentId String?
+  assignedAt     DateTime?
+
+  // Timing
+  createdAt      DateTime  @default(now())
+  startedAt      DateTime?
+  endedAt        DateTime?
+  lastActivityAt DateTime  @updatedAt
+
+  chatWindowStatus ChatWindowStatus @default(CLOSED)
+
+  // Relations
+  departments         Department[]          @relation("NonServingDepartments")
+  department          Department?           @relation("CurrentServingDepartment", fields: [currentServingDepartmentId], references: [id], onDelete: SetNull)
+  visitor             Visitor               @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  workspace           Workspace             @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  visitorSession      VisitorSession        @relation(fields: [visitorSessionId], references: [id], onDelete: Cascade)
+  primaryAgent        User?                 @relation("PrimaryAgent", fields: [primaryAgentId], references: [id], onDelete: SetNull)
+  participants        ChatParticipant[]
+  messages            ChatMessage[]
+  analytics           ChatAnalytics?
+  transfers           ChatTransfer[]
+  sessionHistory      ChatSessionHistory[]
+  typingEvents        TypingEvent[]
+  agentStatuses       AgentStatus[]         @relation("AgentCurrentRoom")
+  cannedResponseUsage CannedResponseUsage[]
+  conversationTags    ConversationTag[]
+  triggerExecutionLog TriggerExecutionLog[]
+
+  @@index([workspaceId])
+  @@index([visitorId])
+  @@index([visitorSessionId])
+  @@index([primaryAgentId])
+  @@index([createdAt])
+}
+
+enum ParticipantStatus {
+  ACTIVE
+  AWAY
+  OFFLINE
+}
+
+model ChatParticipant {
+  id        String  @id @default(cuid())
+  roomId    String
+  userId    String? // For agents
+  visitorId String? // For visitors (from frontend widget)
+
+  // Participant info
+  name      String
+  email     String?
+  avatarUrl String?
+
+  // Role and permissions
+  role String @default("visitor") // visitor, agent, observer, admin
+
+  // Status
+  status ParticipantStatus @default(ACTIVE)
+
+  // Timing
+  joinedAt   DateTime  @default(now())
+  leftAt     DateTime?
+  lastSeenAt DateTime  @updatedAt
+
+  // Relations
+  room               ChatRoom             @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  user               User?                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  visitor            Visitor?             @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  typingEvent        TypingEvent[]
+  chatSessionHistory ChatSessionHistory[]
+
+  @@unique([roomId, userId])
+  @@unique([roomId, visitorId])
+  @@index([roomId])
+  @@index([userId])
+  @@index([visitorId])
+  @@index([status])
+}
+
+// Group 2: Messaging System
+model ChatMessage {
+  id         String  @id @default(cuid())
+  roomId     String
+  userId     String?
+  sessionId  String?
+  senderType String // visitor, agent, system
+  messageId  String? @unique
+
+  // Message content
+  content     String
+  messageType String @default("text") // text, image, file, system, internal
+
+  // Internal/Whisper messages (only visible to agents)
+  isInternal Boolean @default(false)
+
+  // Message metadata
+  metadata  Json? // {fileUrl, fileName, fileSize, etc.}
+  replyToId String?
+
+  // Delivery status
+  deliveredAt DateTime?
+  readAt      DateTime?
+
+  // Delivery tracking
+  deliveredTo String[]
+  readBy      String[]
+
+  // Timing
+  createdAt DateTime @default(now())
+
+  // Relations
+  visitorSession VisitorSession? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  user           User?           @relation(fields: [userId], references: [id], onDelete: SetNull)
+  room           ChatRoom        @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  replyTo        ChatMessage?    @relation("MessageReplies", fields: [replyToId], references: [id], onDelete: SetNull)
+  replies        ChatMessage[]   @relation("MessageReplies")
+
+  @@index([roomId])
+  @@index([userId])
+  @@index([sessionId])
+  @@index([isInternal])
+  @@index([createdAt])
+}
+
+model TypingEvent {
+  id            String @id @default(cuid())
+  roomId        String
+  participantId String
+
+  // Typing state
+  isTyping Boolean @default(true)
+
+  // Timing
+  createdAt DateTime @default(now())
+  expiresAt DateTime // Auto-expire typing events
+
+  // Relations
+  participant ChatParticipant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  room        ChatRoom        @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId])
+  @@index([participantId])
+  @@index([expiresAt])
+}
+
+enum AgentAvailability {
+  ONLINE
+  BUSY
+  OFFLINE
+}
+
+// Group 3: Agent Management & Routing
+model AgentStatus {
+  id          String @id @default(cuid())
+  userId      String @unique
+  workspaceId String
+
+  // Status
+  status AgentAvailability @default(OFFLINE)
+
+  // Current activity
+  currentRoomId String?
+
+  // Capacity
+  maxConcurrentChats Int @default(5)
+  currentChats       Int @default(0)
+
+  // Timing
+  lastSeenAt      DateTime @updatedAt
+  statusChangedAt DateTime @default(now())
+
+  // Relations
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  currentRoom ChatRoom? @relation("AgentCurrentRoom", fields: [currentRoomId], references: [id], onDelete: SetNull)
+
+  @@index([workspaceId])
+  @@index([status])
+}
+
+model ChatRoutingRule {
+  id          String @id @default(cuid())
+  workspaceId String
+  name        String
+
+  // Rule conditions
+  conditions Json // {pageUrl, referrer, visitorType, etc.}
+
+  // Routing logic
+  routingType  String @default("round_robin") // round_robin, skill_based, load_based, manual
+  targetAgents Json? // Specific agent IDs or criteria
+
+  // Priority
+  priority Int     @default(0)
+  isActive Boolean @default(true)
+
+  // Timing
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@index([isActive])
+  @@index([priority])
+}
+
+// Group 4: Analytics & Performance
+model ChatAnalytics {
+  id     String @id @default(cuid())
+  roomId String @unique
+
+  // Response times
+  firstResponseTime   Int? // milliseconds
+  averageResponseTime Int? // milliseconds
+
+  // Engagement metrics
+  messageCount         Int @default(0)
+  visitorMessageCount  Int @default(0)
+  agentMessageCount    Int @default(0)
+  internalMessageCount Int @default(0)
+
+  // Duration
+  chatDuration   Int? // seconds
+  activeDuration Int? // seconds
+
+  // Participant metrics
+  agentCount       Int @default(0)
+  participantCount Int @default(1)
+
+  // Satisfaction
+  rating   Int? // 1-5 stars
+  feedback String?
+
+  // Timing
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  room ChatRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([createdAt])
+}
+
+model ChatPerformanceMetric {
+  id          String @id @default(cuid())
+  workspaceId String
+
+  // Metric details
+  metricType String // response_time, satisfaction, volume, etc.
+  metricName String // specific metric name
+  value      Decimal @db.Decimal(10, 3)
+  unit       String  @default("ms")
+
+  // Context
+  timePeriod String // daily, weekly, monthly
+  agentId    String?
+  roomId     String?
+
+  // Timing
+  recordedAt DateTime @default(now())
+
+  // Relations
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  agent     User?     @relation(fields: [agentId], references: [id], onDelete: SetNull)
+
+  @@index([workspaceId])
+  @@index([metricType])
+  @@index([recordedAt])
+}
+
+// Group 5: Chat History & Transfers
+model ChatTransfer {
+  id     String @id @default(cuid())
+  roomId String
+
+  // Transfer details
+  fromAgentId String?
+  toAgentId   String?
+  reason      String?
+
+  // Transfer type
+  transferType String @default("manual") // manual, automatic, escalation
+
+  // Timing
+  transferredAt DateTime @default(now())
+
+  // Relations
+  room      ChatRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  fromAgent User?    @relation("TransferFrom", fields: [fromAgentId], references: [id], onDelete: SetNull)
+  toAgent   User?    @relation("TransferTo", fields: [toAgentId], references: [id], onDelete: SetNull)
+
+  @@index([roomId])
+  @@index([transferredAt])
+}
+
+model ChatSessionHistory {
+  id     String @id @default(cuid())
+  roomId String
+
+  // Session details
+  sessionType   String // visitor_session, agent_session
+  participantId String
+
+  // Session state
+  action String // joined, left, transferred, escalated
+  reason String?
+
+  // Duration
+  startedAt DateTime
+  endedAt   DateTime?
+  duration  Int? // seconds
+
+  // Relations
+  participant ChatParticipant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  room        ChatRoom        @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId])
+  @@index([participantId])
+  @@index([startedAt])
+}
+
+// Group 8: Visitor & Session Management
+model Visitor {
+  id          String @id // Frontend-provided visitor ID
+  workspaceId String
+
+  // Identity fields
+  email String?
+  name  String?
+  phone String?
+  notes String?
+
+  // Session tracking
+  sessionCount   Int      @default(0)
+  isActive       Boolean  @default(true)
+  lastActivityAt DateTime @default(now())
+
+  // Chat engagement
+  totalChats Int     @default(0)
+  rating     Int?
+  feedback   String?
+
+  // Timing
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  workspace           Workspace             @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  visitorSession      VisitorSession[]
+  visitorAnalytics    VisitorAnalytics[]
+  visitorPageTracking VisitorPageTracking[]
+  chatRoom            ChatRoom[]
+  chatParticipant     ChatParticipant[]
+
+  @@unique([email, workspaceId])
+  @@index([workspaceId])
+  @@index([email])
+  @@index([phone])
+}
+
+enum VisitorSessionStatus {
+  ACTIVE
+  IDLE
+  AWAY
+  INCOMING
+  CURRENTLY_SERVED
+  PENDING_TRANSFER
+  PENDING_INVITE
+}
+
+model VisitorPageTracking {
+  id          String @id @default(cuid())
+  visitorId   String
+  sessionId   String @unique
+  workspaceId String
+
+  // Page identification
+  pageUrl   String
+  pageTitle String?
+  pagePath  String?
+  pageHash  String? // URL hash fragment
+  pageQuery String? // URL query parameters
+
+  // Engagement metrics
+  timeOnPage Int? // Time spent on page in seconds
+
+  // Page performance
+  pageLoadTime Int? // Page load time in milliseconds
+
+  // Navigation Path
+  navigationPath Json[]
+
+  // Navigation context
+  navigationMethod String? // 'click', 'back', 'forward', 'direct', 'search'
+  navigationSource String? // 'internal', 'external', 'search', 'social', 'direct'
+  navigationIntent String? // 'browse', 'search', 'purchase', 'support'
+
+  // Timing
+  viewedAt  DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  visitor   Visitor        @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  session   VisitorSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  workspace Workspace      @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([visitorId])
+  @@index([sessionId])
+  @@index([workspaceId])
+  @@index([pageUrl])
+  @@index([viewedAt])
+  @@index([navigationSource])
+}
+
+model VisitorSession {
+  id          String @id @default(cuid()) // This is the Session ID generated by backend
+  workspaceId String
+  visitorId   String // This is the Visitor ID from frontend widget
+
+  // Session context
+  userAgent         String?
+  ipAddress         String?
+  deviceInfo        Json?
+  deviceFingerprint Json?
+  hostName          String?
+  location          Json?
+  referrerData      Json? // Comprehensive referrer tracking data
+
+  // Session state
+  status         VisitorSessionStatus @default(ACTIVE)
+  lastActivityAt DateTime             @updatedAt
+
+  // Timing
+  startedAt DateTime  @default(now())
+  endedAt   DateTime?
+
+  // Relations
+  visitor                   Visitor              @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  workspace                 Workspace            @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  chatRoom                  ChatRoom?
+  chatMessage               ChatMessage[]
+  visitorPageTracking       VisitorPageTracking?
+  tags                      Tag[]
+  conversationTags          ConversationTag[]
+  conversationTagsRemovedBy ConversationTag[]    @relation("ConversationTagRemovedBy")
+
+  @@index([workspaceId])
+  @@index([visitorId])
+  @@index([status])
+  @@index([startedAt])
+}
+
+model VisitorAnalytics {
+  id          String @id @default(cuid())
+  visitorId   String // Frontend-generated visitor ID
+  workspaceId String
+
+  // Engagement metrics
+  totalChats          Int  @default(0)
+  totalMessages       Int  @default(0)
+  averageChatDuration Int? // seconds
+
+  // Satisfaction
+  averageRating Decimal? @db.Decimal(3, 2)
+  totalRatings  Int      @default(0)
+
+  // Timing
+  firstVisitAt DateTime?
+  lastVisitAt  DateTime?
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  visitor   Visitor   @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@unique([visitorId, workspaceId])
+  @@index([workspaceId])
+  @@index([visitorId])
+  @@index([lastVisitAt])
+}
+
+// ============================================================================
+// CANNED RESPONSES
+// ============================================================================
+
+model CannedResponse {
+  id          String  @id @default(cuid())
+  workspaceId String
+  title       String
+  content     String
+  shortcut    String?
+
+  categoryId String?
+  tags       String[]
+
+  isActive Boolean @default(true)
+  isSystem Boolean @default(false)
+
+  createdBy String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user                   User?                   @relation(fields: [createdBy], references: [id], onDelete: SetNull)
+  category               CannedResponseCategory? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  workspace              Workspace               @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  cannedResponseUsage    CannedResponseUsage[]
+  cannedResponseFolder   CannedResponseFolder?   @relation(fields: [cannedResponseFolderId], references: [id], onDelete: Cascade)
+  cannedResponseFolderId String?
+}
+
+model CannedResponseCategory {
+  id          String  @id @default(cuid())
+  workspaceId String
+  name        String
+  color       String
+  description String?
+  sortOrder   Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  cannedResponses CannedResponse[]
+  workspace       Workspace        @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+model CannedResponseUsage {
+  id               String @id @default(cuid())
+  cannedResponseId String
+  userId           String
+  roomId           String
+
+  usageCount Int      @default(0)
+  usedAt     DateTime @default(now())
+
+  // Relations
+  cannedResponse CannedResponse @relation(fields: [cannedResponseId], references: [id], onDelete: Cascade)
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  room           ChatRoom       @relation(fields: [roomId], references: [id], onDelete: Cascade)
+}
+
+model CannedResponseFolder {
+  id          String  @id @default(cuid())
+  workspaceId String
+  name        String
+  parentId    String?
+  sortOrder   Int
+
+  createdBy String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user            User                   @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+  workspace       Workspace              @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  parent          CannedResponseFolder?  @relation("CannedResponseFolderParent", fields: [parentId], references: [id], onDelete: SetNull)
+  children        CannedResponseFolder[] @relation("CannedResponseFolderParent")
+  cannedResponses CannedResponse[]
+
+  @@index([workspaceId])
+  @@index([parentId])
+  @@index([sortOrder])
+  @@index([createdAt])
+  @@index([updatedAt])
+}
+
+model CannedResponseUserPreference {
+  id          String @id @default(cuid())
+  userId      String
+  workspaceId String
+
+  // Preferences
+  cannedResponseId String
+  isFavorite       Boolean @default(false)
+  usageCount       Int     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([workspaceId])
+  @@index([cannedResponseId])
+  @@index([isFavorite])
+  @@index([usageCount])
+  @@index([createdAt])
+  @@index([updatedAt])
+}
+
+// ============================================================================
+// TAGS
+// ============================================================================
+
+model Tag {
+  id          String  @id @default(cuid())
+  workspaceId String
+  name        String
+  color       String
+  description String?
+  isSystem    Boolean @default(false)
+
+  categoryId String?
+
+  createdByUser    String?
+  createdByVisitor String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Relations
+  user              User?               @relation(fields: [createdByUser], references: [id], onDelete: Cascade)
+  visitorSession    VisitorSession?     @relation(fields: [createdByVisitor], references: [id], onDelete: Cascade)
+  workspace         Workspace           @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  category          TagCategory?        @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  conversationTag   ConversationTag[]
+  tagUsage          TagUsage[]
+  userTagPreference UserTagPreference[]
+
+  @@unique([name, createdByVisitor])
+  @@index([workspaceId])
+  @@index([name])
+  @@index([createdAt])
+  @@index([updatedAt])
+}
+
+model TagCategory {
+  id          String  @id @default(cuid())
+  workspaceId String
+  name        String
+  color       String
+  description String?
+  sortOrder   Int
+
+  createdBy String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user      User      @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  tags      Tag[]
+
+  @@index([workspaceId])
+  @@index([name])
+  @@index([createdAt])
+  @@index([updatedAt])
+}
+
+model ConversationTag {
+  id    String @id @default(cuid())
+  tagId String
+
+  conversationId String
+
+  assignedByUser    String?
+  assignedByVisitor String?
+  assignedAt        DateTime @default(now())
+
+  removedByUser    String?
+  removedByVisitor String?
+  removedAt        DateTime?
+
+  // Relations
+  tag             Tag             @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  conversation    ChatRoom        @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  user            User?           @relation(fields: [assignedByUser], references: [id], onDelete: Cascade)
+  visitorSession  VisitorSession? @relation(fields: [assignedByVisitor], references: [id], onDelete: Cascade)
+  removingUser    User?           @relation("ConversationTagRemovedBy", fields: [removedByUser], references: [id], onDelete: SetNull)
+  removingVisitor VisitorSession? @relation("ConversationTagRemovedBy", fields: [removedByVisitor], references: [id], onDelete: SetNull)
+
+  @@index([tagId])
+  @@index([conversationId])
+  @@index([assignedByUser])
+  @@index([assignedByVisitor])
+  @@index([removedByUser])
+  @@index([removedByVisitor])
+  @@index([assignedAt])
+  @@index([removedAt])
+}
+
+model TagUsage {
+  id          String @id @default(cuid())
+  tagId       String
+  workspaceId String
+
+  usageCount Int      @default(0)
+  lastUsedAt DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  tag       Tag       @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([tagId])
+  @@index([workspaceId])
+  @@index([usageCount])
+  @@index([lastUsedAt])
+  @@index([createdAt])
+  @@index([updatedAt])
+}
+
+model UserTagPreference {
+  id          String @id @default(cuid())
+  userId      String
+  workspaceId String
+
+  tagId      String
+  isFavorite Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  usageCount Int      @default(0)
+  lastUsedAt DateTime @default(now())
+
+  // Relations
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  tag       Tag       @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([workspaceId])
+  @@index([tagId])
+  @@index([isFavorite])
+  @@index([usageCount])
+  @@index([lastUsedAt])
+  @@index([createdAt])
+  @@index([updatedAt])
+}
+
+// ============================================================================
+// TRIGGERS
+// ============================================================================
+
+enum TriggerEvent {
+  WIDGET_ENTER
+  INCOMING_REQUEST
+  CHAT_MESSAGE
+}
+
+enum LogicalOperator {
+  AND
+  OR
+}
+
+enum TriggerConditionField {
+  HOUR_OF_DAY
+  DAY_OF_WEEK
+  STILL_ON_PAGE
+  STILL_ON_SITE
+  VISITOR_COUNTRY_CODE
+  VISITOR_COUNTRY_NAME
+  VISITOR_CITY
+  VISITOR_REGION
+  VISITOR_PREVIOUS_CHATS
+  VISITOR_PREVIOUS_VISITS
+  VISITOR_PAGE_URL
+  VISITOR_PAGE_TITLE
+  VISITOR_PAGE_COUNT
+  VISITOR_PREVIOUS_PAGE
+  VISITOR_NAME
+  VISITOR_EMAIL
+  VISITOR_REFERRER
+  VISITOR_SEARCH_ENGINE
+  VISITOR_SEARCH_TERMS
+  VISITOR_TAG
+  VISITOR_DEPARTMENT
+  VISITOR_USER_AGENT
+  VISITOR_BROWSER
+  VISITOR_PLATFORM
+  ACCOUNT_STATUS
+  DEPARTMENT_STATUS
+  VISITOR_STATUS
+  VISITOR_IS_CHATTING
+  VISITOR_INCOMING_REQUEST
+  VISITOR_CURRENTLY_SERVED
+  SENDER
+  SENDER_TYPE
+  MESSAGE
+  QUEUE_SIZE
+}
+
+enum PredicateOperator {
+  EQ
+  NE
+  LT
+  LTE
+  GT
+  GTE
+  CONTAINS
+  ICONTAINS
+  STARTS_WITH
+  ISTARTS_WITH
+  ENDS_WITH
+  IENDS_WITH
+}
+
+enum ActionType {
+  WAIT
+  SEND_MESSAGE_TO_VISITOR
+  SET_NAME_OF_VISITOR
+  ADD_TAG
+  REMOVE_TAG
+  SET_VISITOR_DEPARTMENT
+  REPLACE_NOTE
+  APPEND_NOTE
+}
+
+model Trigger {
+  id           String       @id @default(cuid())
+  workspaceId  String
+  departmentId String?
+  name         String
+  description  String?
+  event        TriggerEvent
+  enabled      Boolean      @default(false)
+  priority     Int          @default(1)
+
+  createdBy String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  createdByUser       User?                   @relation(fields: [createdBy], references: [id], onDelete: SetNull)
+  workspace           Workspace               @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  conditionGroups     TriggerConditionGroup[]
+  actions             TriggerAction[]
+  department          Department?             @relation(fields: [departmentId], references: [id])
+  triggerExecutionLog TriggerExecutionLog[]
+
+  @@index([workspaceId, enabled, event])
+  @@index([priority])
+  @@index([updatedAt])
+}
+
+model TriggerConditionGroup {
+  id        String          @id @default(cuid())
+  triggerId String
+  parentId  String?
+  operator  LogicalOperator
+  sortOrder Int             @default(0) // order among sibling groups/conditions
+
+  // Relations
+  trigger    Trigger                 @relation(fields: [triggerId], references: [id], onDelete: Cascade)
+  parent     TriggerConditionGroup?  @relation("TCGParent", fields: [parentId], references: [id], onDelete: SetNull)
+  children   TriggerConditionGroup[] @relation("TCGParent")
+  conditions TriggerCondition[]
+
+  @@index([triggerId])
+  @@index([parentId])
+  @@index([sortOrder])
+}
+
+model TriggerCondition {
+  id        String             @id @default(cuid())
+  groupId   String
+  operator  PredicateOperator?
+  sortOrder Int                @default(0)
+
+  field TriggerConditionField
+
+  // Primary Right operand (typed)
+  primaryRightString  String?
+  primaryRightNumber  Int?
+  primaryRightBoolean Boolean?
+
+  // Secondary Right operand (typed)
+  secondaryRightString  String?
+  secondaryRightNumber  Int?
+  secondaryRightBoolean Boolean?
+
+  // Relations
+  group TriggerConditionGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@index([groupId])
+  @@index([sortOrder])
+}
+
+model TriggerAction {
+  id        String     @id @default(cuid())
+  triggerId String
+  type      ActionType
+  sortOrder Int        @default(0)
+
+  // Primary value
+  primaryIntValue     Int?
+  primaryStringValue  String?
+  primaryBooleanValue Boolean?
+
+  // Secondary value
+  secondaryIntValue     Int?
+  secondaryStringValue  String?
+  secondaryBooleanValue Boolean?
+
+  // Relations
+  trigger Trigger @relation(fields: [triggerId], references: [id], onDelete: Cascade)
+
+  @@index([triggerId])
+  @@index([sortOrder])
+}
+
+enum TriggerExecutionStatus {
+  SUCCESS
+  FAILED
+}
+
+model TriggerExecutionLog {
+  id           String  @id @default(cuid())
+  workspaceId  String
+  departmentId String?
+  triggerId    String
+  chatRoomId   String?
+
+  currentStatus TriggerExecutionStatus
+
+  totalExecutions Int @default(0)
+  totalSuccesses  Int @default(0)
+  totalFailures   Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  lastTriggeredAt DateTime?
+
+  executionDetails Json?
+
+  // Relations
+  trigger    Trigger     @relation(fields: [triggerId], references: [id], onDelete: Cascade)
+  department Department? @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  chatRoom   ChatRoom?   @relation(fields: [chatRoomId], references: [id], onDelete: SetNull)
+
+  @@index([triggerId])
+  @@index([departmentId])
+  @@index([workspaceId])
+}
+
+// ============================================================================
+// WIDGET SYSTEM TABLES
+// ============================================================================
+
+model Widget {
+  id          String @id @default(cuid())
+  workspaceId String
+
+  settingsId String @unique
+
+  isActive Boolean @default(true)
+
+  // Metadata
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  workspace Workspace      @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  settings  WidgetSettings @relation(fields: [settingsId], references: [id], onDelete: Cascade)
+
+  @@index([id])
+  @@index([workspaceId])
+  @@index([isActive])
+}
+
+model WidgetSettings {
+  id           String @id @default(cuid())
+  appearanceId String
+  soundId      String
+  behaviorId   String
+  contentId    String
+  formsId      String
+  securityId   String
+
+  // Relations
+  widget     Widget?
+  appearance WidgetAppearance @relation(fields: [appearanceId], references: [id])
+  sound      WidgetSound      @relation(fields: [soundId], references: [id])
+  behavior   WidgetBehavior   @relation(fields: [behaviorId], references: [id])
+  content    WidgetContent    @relation(fields: [contentId], references: [id])
+  forms      WidgetForms      @relation(fields: [formsId], references: [id])
+  security   WidgetSecurity   @relation(fields: [securityId], references: [id])
+}
+
+model WidgetAppearance {
+  id               String         @id @default(cuid())
+  chatBadge        Boolean        @default(false)
+  widgetColorId    String
+  fontSize         Int            @default(14)
+  fontFamily       String         @default("Inter")
+  position         WidgetPosition @default(BOTTOM_RIGHT)
+  borderRadius     Int            @default(12)
+  size             WidgetSize     @default(MEDIUM)
+  customSizeWidth  Int?
+  customSizeHeight Int?
+  showAvatar       Boolean        @default(true)
+  showCompanyLogo  Boolean        @default(true)
+  companyLogoUrl   String?
+
+  colors         WidgetColors     @relation(fields: [widgetColorId], references: [id])
+  widgetSettings WidgetSettings[]
+}
+
+model WidgetColors {
+  id         String @id @default(cuid())
+  primary    String @default("#3b82f6")
+  secondary  String @default("#f3f4f6")
+  background String @default("#f9fafb")
+  text       String @default("#1f2937")
+
+  widgetAppearance WidgetAppearance[]
+}
+
+enum WidgetPosition {
+  TOP_LEFT
+  TOP_RIGHT
+  BOTTOM_LEFT
+  BOTTOM_RIGHT
+}
+
+enum WidgetSize {
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+model WidgetSound {
+  id             String           @id @default(cuid())
+  enabled        Boolean          @default(true)
+  volume         Int              @default(50)
+  type           WidgetSoundType  @default(MESSAGE)
+  hapticFeedback Boolean          @default(true)
+  widgetSettings WidgetSettings[]
+}
+
+enum WidgetSoundType {
+  MESSAGE
+  NOTIFICATION
+  ALERT
+}
+
+model WidgetBehavior {
+  id               String           @id @default(cuid())
+  autoOpen         Boolean          @default(true)
+  autoOpenDelay    Int              @default(3)
+  offlineMode      Boolean          @default(false)
+  offlineMessage   String?
+  reduceAnimations Boolean          @default(false)
+  autoClose        Boolean          @default(false)
+  autoCloseDelay   Int?
+  widgetSettings   WidgetSettings[]
+}
+
+model WidgetContent {
+  id               String           @id @default(cuid())
+  welcomeMessage   String           @default("Welcome! How can we help you?")
+  inputPlaceholder String           @default("Type your message...")
+  thankyouMessage  String           @default("Thank you for contacting us!")
+  widgetSettings   WidgetSettings[]
+}
+
+model WidgetForms {
+  id                String @id @default(cuid())
+  preChatFormId     String
+  offlineChatFormId String
+  postChatFormId    String
+  userInfoFormId    String
+  badgeChatFormId   String
+
+  // Relations
+  preChatForm     PreChatForm      @relation(fields: [preChatFormId], references: [id])
+  offlineChatForm OfflineChatForm  @relation(fields: [offlineChatFormId], references: [id])
+  postChatForm    PostChatForm     @relation(fields: [postChatFormId], references: [id])
+  userInfoForm    UserInfoForm     @relation(fields: [userInfoFormId], references: [id])
+  badgeChatForm   BadgeChatForm    @relation(fields: [badgeChatFormId], references: [id])
+  widgetSettings  WidgetSettings[]
+}
+
+model PreChatForm {
+  id              String        @id @default(cuid())
+  enabled         Boolean       @default(true)
+  required        Boolean       @default(false)
+  preChatGreeting String        @default("Welcome! How can we help you?")
+  requireIdentity Boolean       @default(true)
+  requirePhone    Boolean       @default(false)
+  requireQuestion Boolean       @default(false)
+  widgetForms     WidgetForms[]
+}
+
+model OfflineChatForm {
+  id                  String        @id @default(cuid())
+  enabled             Boolean       @default(true)
+  offlineChatGreeting String        @default("Sorry we aren't online at the moment. Leave a message and we will get back to you")
+  requirePhone        Boolean       @default(true)
+  widgetForms         WidgetForms[]
+}
+
+model PostChatForm {
+  id               String        @id @default(cuid())
+  enabled          Boolean       @default(true)
+  required         Boolean       @default(false)
+  postChatGreeting String        @default("Thank you for your feedback!")
+  requireRating    Boolean       @default(false)
+  requireFeedback  Boolean       @default(false)
+  widgetForms      WidgetForms[]
+}
+
+model UserInfoForm {
+  id             String           @id @default(cuid())
+  enabled        Boolean          @default(true)
+  required       Boolean          @default(false)
+  userInfoFields UserInfoFields[]
+  widgetForms    WidgetForms[]
+}
+
+model UserInfoFields {
+  id             String  @unique
+  label          String
+  type           String
+  placeholder    String
+  required       Boolean
+  options        Json?
+  userInfoFormId String?
+
+  // Relations
+  userInfoForm UserInfoForm? @relation(fields: [userInfoFormId], references: [id], onDelete: Cascade)
+}
+
+model BadgeChatForm {
+  id          String        @id @default(cuid())
+  enabled     Boolean       @default(true)
+  widgetForms WidgetForms[]
+}
+
+model WidgetSecurity {
+  id                 String           @id @default(cuid())
+  domainRestriction  Boolean          @default(false)
+  allowedDomains     String[]         @default([])
+  countryRestriction Boolean          @default(false)
+  blockedCountries   String[]         @default([])
+  widgetSettings     WidgetSettings[]
+}

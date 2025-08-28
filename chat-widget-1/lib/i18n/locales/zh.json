@@ -1,0 +1,270 @@
+{
+  "mainPage": {
+    "title": "Kogents风格聊天小部件",
+    "description": "可自定义的聊天小部件，可以嵌入到任何网站中。",
+    "buttons": {
+      "viewDemo": "查看演示",
+      "documentation": "文档"
+    },
+    "integration": {
+      "title": "快速集成",
+      "description": "将此脚本添加到您的网站以嵌入聊天小部件："
+    },
+    "debug": {
+      "currentLanguage": "当前语言",
+      "direction": "方向",
+      "rtl": "从右到左",
+      "browserLanguage": "浏览器语言"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "输入消息...",
+      "submit": "提交",
+      "typing": "正在输入"
+    },
+    "button": {
+      "open": "打开聊天",
+      "close": "关闭聊天",
+      "cancel": "取消",
+      "submit": "提交"
+    },
+    "header": {
+      "title": "聊天",
+      "online": "在线",
+      "offline": "离线",
+      "connecting": "连接中",
+      "connected": "已连接到在线客服",
+      "disconnected": "与在线客服断开连接",
+      "aiAssistant": "AI助手",
+      "liveAgent": "在线客服",
+      "liveChatSupport": "在线聊天支持"
+    },
+    "messages": {
+      "agent": "客服",
+      "aiAgent": "AI客服",
+      "liveAgent": "在线客服",
+      "typing": "客服正在输入",
+      "connecting": "连接到聊天",
+      "connectionLost": "连接丢失",
+      "socketConnected": "Socket连接成功",
+      "newMessage": "新消息",
+      "unreadMessages": "未读消息"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "欢迎！我们如何为您提供帮助？",
+        "name": "姓名",
+        "email": "邮箱",
+        "phone": "电话号码",
+        "question": "问题",
+        "enterName": "请输入您的姓名",
+        "enterEmail": "请输入您的邮箱",
+        "enterPhone": "请输入您的电话",
+        "enterQuery": "请在此输入您的问题...",
+        "optional": "（可选）",
+        "required": "此字段为必填项。",
+        "sendMessage": "发送消息"
+      },
+      "postChatForm": {
+        "greeting": "感谢您的反馈！",
+        "rating": "评分",
+        "feedback": "反馈",
+        "enterFeedback": "请在此输入您的反馈...",
+        "submit": "提交",
+        "optional": "（可选）",
+        "required": "请提供评分。"
+      },
+      "offlineChatForm": {
+        "greeting": "抱歉，我们目前不在线。请留言，我们会回复您。",
+        "name": "姓名",
+        "email": "邮箱",
+        "phone": "电话号码",
+        "question": "问题",
+        "enterName": "请输入您的姓名",
+        "enterEmail": "请输入您的邮箱",
+        "enterPhone": "请输入您的电话号码",
+        "enterQuery": "请在此输入您的问题...",
+        "sendMessage": "发送消息",
+        "optional": "（可选）",
+        "required": "此字段为必填项。"
+      }
+    },
+    "errors": {
+      "failed": "失败",
+      "error": "错误",
+      "validationError": "验证错误",
+      "fieldRequired": "此字段为必填项。",
+      "fillAllFields": "请在提交前填写所有必填字段。",
+      "connectionError": "发生连接错误",
+      "uploadFailed": "上传失败",
+      "processingFailed": "处理失败"
+    },
+    "file": {
+      "loading": "加载中",
+      "cancel": "取消上传",
+      "remove": "删除文件",
+      "upload": "上传",
+      "failed": "上传失败"
+    },
+    "accessibility": {
+      "chatOpened": "聊天已打开",
+      "chatClosed": "聊天已关闭",
+      "chatButtonDisabled": "聊天按钮已禁用",
+      "chatButtonEnabled": "聊天按钮已启用",
+      "chatButtonFocused": "聊天按钮已聚焦",
+      "fullscreen": "聊天现在是全屏模式",
+      "windowed": "聊天是窗口模式",
+      "scrollToBottom": "滚动到底部",
+      "closeChat": "关闭聊天",
+      "openChat": "打开聊天"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "AI助手",
+      "liveAgent": "在线客服",
+      "liveChatSupport": "在线聊天支持",
+      "online": "在线",
+      "offline": "离线",
+      "connecting": "连接中",
+      "connected": "已连接到在线客服",
+      "disconnected": "与在线客服断开连接",
+      "fullscreen": "全屏",
+      "minimize": "最小化",
+      "close": "关闭聊天"
+    },
+    "button": {
+      "open": "打开聊天",
+      "close": "关闭聊天",
+      "chat": "聊天",
+      "cancel": "取消",
+      "submit": "提交",
+      "send": "发送",
+      "sendMessage": "发送消息"
+    },
+    "input": {
+      "placeholder": "输入消息...",
+      "typing": "正在输入",
+      "send": "发送",
+      "attachment": "附件",
+      "emoji": "表情",
+      "moreOptions": "更多选项",
+      "attachFiles": "附加文件（或拖放）"
+    },
+    "messages": {
+      "agent": "客服",
+      "aiAgent": "AI客服",
+      "liveAgent": "在线客服",
+      "typing": "客服正在输入",
+      "connecting": "连接到聊天",
+      "connectionLost": "连接丢失",
+      "socketConnected": "Socket连接成功",
+      "newMessage": "新消息",
+      "unreadMessages": "未读消息",
+      "processing": "处理文件中...",
+      "processingMessage": "处理您的消息中...",
+      "pleaseWait": "请稍等，我们正在准备您的文件",
+      "justNow": "刚刚"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "欢迎！我们如何为您提供帮助？",
+        "name": "姓名",
+        "email": "邮箱",
+        "phone": "电话号码",
+        "question": "问题",
+        "enterName": "请输入您的姓名",
+        "enterEmail": "请输入您的邮箱",
+        "enterPhone": "请输入您的电话",
+        "enterQuery": "请在此输入您的问题...",
+        "optional": "（可选）",
+        "required": "此字段为必填项。",
+        "sendMessage": "发送消息"
+      },
+      "postChatForm": {
+        "greeting": "感谢您的反馈！",
+        "rating": "评分",
+        "feedback": "反馈",
+        "enterFeedback": "请在此输入您的反馈...",
+        "submit": "提交",
+        "optional": "（可选）",
+        "required": "请提供评分。"
+      },
+      "offlineChatForm": {
+        "greeting": "抱歉，我们目前不在线。请留言，我们会回复您。",
+        "name": "姓名",
+        "email": "邮箱",
+        "phone": "电话号码",
+        "question": "问题",
+        "enterName": "请输入您的姓名",
+        "enterEmail": "请输入您的邮箱",
+        "enterPhone": "请输入您的电话号码",
+        "enterQuery": "请在此输入您的问题...",
+        "sendMessage": "发送消息",
+        "optional": "（可选）",
+        "required": "此字段为必填项。"
+      },
+      "badgeChatForm": {
+        "greeting": "我们今天如何为您提供帮助？",
+        "placeholder": "在此输入您的消息...",
+        "send": "发送"
+      },
+      "userInfoForm": {
+        "title": "用户信息",
+        "name": "姓名",
+        "email": "邮箱",
+        "phone": "电话",
+        "save": "保存",
+        "cancel": "取消"
+      }
+    },
+    "errors": {
+      "failed": "失败",
+      "error": "错误",
+      "validationError": "验证错误",
+      "fieldRequired": "此字段为必填项。",
+      "fillAllFields": "请在提交前填写所有必填字段。",
+      "connectionError": "发生连接错误",
+      "uploadFailed": "上传失败",
+      "processingFailed": "处理失败"
+    },
+    "file": {
+      "loading": "加载中",
+      "cancel": "取消上传",
+      "remove": "删除文件",
+      "upload": "上传",
+      "failed": "上传失败",
+      "dropFilesHere": "在此拖放文件以上传"
+    },
+    "accessibility": {
+      "chatOpened": "聊天已打开",
+      "chatClosed": "聊天已关闭",
+      "chatButtonDisabled": "聊天按钮已禁用",
+      "chatButtonEnabled": "聊天按钮已启用",
+      "chatButtonFocused": "聊天按钮已聚焦",
+      "fullscreen": "聊天现在是全屏模式",
+      "windowed": "聊天是窗口模式",
+      "scrollToBottom": "滚动到底部",
+      "closeChat": "关闭聊天",
+      "openChat": "打开聊天",
+      "newMessages": "新消息",
+      "unreadMessage": "未读消息"
+    },
+    "status": {
+      "connecting": "连接中...",
+      "connected": "已连接",
+      "disconnected": "已断开",
+      "reconnecting": "重新连接中...",
+      "connectionLost": "连接丢失"
+    },
+    "navigation": {
+      "scrollToBottom": "滚动到底部",
+      "newMessages": "新消息",
+      "newMessage": "新消息"
+    },
+    "branding": {
+      "poweredBy": "由Kogents提供支持"
+    }
+  }
+}

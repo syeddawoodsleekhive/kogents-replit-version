@@ -1,0 +1,277 @@
+{
+  "mainPage": {
+    "title": "أداة الدردشة على طراز كوجنتس",
+    "description": "أداة دردشة قابلة للتخصيص يمكن تضمينها في أي موقع ويب.",
+    "buttons": {
+      "viewDemo": "عرض التجريبي",
+      "documentation": "الوثائق"
+    },
+    "integration": {
+      "title": "التكامل السريع",
+      "description": "أضف هذا السكريبت إلى موقعك لتضمين أداة الدردشة:"
+    },
+    "debug": {
+      "currentLanguage": "اللغة الحالية",
+      "direction": "الاتجاه",
+      "rtl": "من اليمين إلى اليسار",
+      "browserLanguage": "لغة المتصفح"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "مساعد ذكي",
+      "liveAgent": "وكيل مباشر",
+      "liveChatSupport": "دعم المحادثة المباشرة",
+      "online": "متصل",
+      "offline": "غير متصل",
+      "connecting": "جاري الاتصال",
+      "connected": "متصل بالوكيل المباشر",
+      "disconnected": "منقطع عن الوكيل المباشر",
+      "fullscreen": "ملء الشاشة",
+      "minimize": "تصغير",
+      "close": "إغلاق المحادثة"
+    },
+    "button": {
+      "open": "فتح المحادثة",
+      "close": "إغلاق المحادثة",
+      "chat": "دردشة",
+      "cancel": "إلغاء",
+      "submit": "إرسال",
+      "send": "إرسال",
+      "sendMessage": "إرسال الرسالة"
+    },
+    "input": {
+      "placeholder": "اكتب رسالة...",
+      "typing": "يكتب",
+      "send": "إرسال",
+      "attachment": "مرفق",
+      "emoji": "رمز تعبيري",
+      "moreOptions": "المزيد من الخيارات",
+      "attachFiles": "إرفاق ملفات (أو اسحب وأفلت)"
+    },
+    "messages": {
+      "agent": "وكيل",
+      "aiAgent": "وكيل ذكي",
+      "liveAgent": "وكيل مباشر",
+      "typing": "الوكيل يكتب",
+      "connecting": "الاتصال بالمحادثة",
+      "connectionLost": "فقدان الاتصال",
+      "socketConnected": "تم الاتصال بنجاح",
+      "newMessage": "رسالة جديدة",
+      "unreadMessages": "رسائل غير مقروءة",
+      "processing": "جاري معالجة الملفات...",
+      "processingMessage": "جاري معالجة رسالتك...",
+      "pleaseWait": "يرجى الانتظار بينما نعد ملفاتك",
+      "justNow": "الآن"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "مرحباً! كيف يمكننا مساعدتك؟",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "question": "السؤال",
+        "enterName": "أدخل اسمك",
+        "enterEmail": "أدخل بريدك الإلكتروني",
+        "enterPhone": "أدخل هاتفك",
+        "enterQuery": "يرجى إدخال استفسارك هنا...",
+        "optional": "(اختياري)",
+        "required": "هذا الحقل مطلوب.",
+        "sendMessage": "إرسال الرسالة"
+      },
+      "postChatForm": {
+        "greeting": "شكراً لك على ملاحظاتك!",
+        "rating": "التقييم",
+        "feedback": "الملاحظات",
+        "enterFeedback": "يرجى إدخال ملاحظاتك هنا...",
+        "submit": "إرسال",
+        "optional": "(اختياري)",
+        "required": "يرجى تقديم تقييم."
+      },
+      "offlineChatForm": {
+        "greeting": "عذراً، نحن غير متصلين في الوقت الحالي. اترك رسالة وسنعاود الاتصال بك.",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "question": "السؤال",
+        "enterName": "أدخل اسمك",
+        "enterEmail": "أدخل بريدك الإلكتروني",
+        "enterPhone": "أدخل رقم هاتفك",
+        "enterQuery": "يرجى إدخال استفسارك هنا...",
+        "sendMessage": "إرسال الرسالة",
+        "optional": "(اختياري)",
+        "required": "هذا الحقل مطلوب."
+      },
+      "badgeChatForm": {
+        "greeting": "كيف يمكننا مساعدتك اليوم؟",
+        "placeholder": "اكتب رسالتك هنا...",
+        "send": "إرسال"
+      },
+      "userInfoForm": {
+        "title": "معلومات المستخدم",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "الهاتف",
+        "save": "حفظ",
+        "cancel": "إلغاء"
+      }
+    },
+    "errors": {
+      "failed": "فشل",
+      "error": "خطأ",
+      "validationError": "خطأ في التحقق",
+      "fieldRequired": "هذا الحقل مطلوب.",
+      "fillAllFields": "يرجى ملء جميع الحقول المطلوبة قبل الإرسال.",
+      "connectionError": "حدث خطأ في الاتصال",
+      "uploadFailed": "فشل الرفع",
+      "processingFailed": "فشل المعالجة"
+    },
+    "file": {
+      "loading": "جاري التحميل",
+      "cancel": "إلغاء الرفع",
+      "remove": "إزالة الملف",
+      "upload": "رفع",
+      "failed": "فشل الرفع",
+      "attachment": "مرفق ملف",
+      "imagePreview": "معاينة الصورة",
+      "download": "تحميل",
+      "preview": "معاينة",
+      "dropFilesHere": "أفلت الملفات هنا للرفع"
+    },
+    "accessibility": {
+      "chatOpened": "تم فتح المحادثة",
+      "chatClosed": "تم إغلاق المحادثة",
+      "chatButtonDisabled": "زر المحادثة معطل",
+      "chatButtonEnabled": "زر المحادثة مفعل",
+      "chatButtonFocused": "زر المحادثة مركز عليه",
+      "fullscreen": "المحادثة الآن في وضع ملء الشاشة",
+      "windowed": "المحادثة في وضع النافذة",
+      "scrollToBottom": "التمرير إلى الأسفل",
+      "closeChat": "إغلاق المحادثة",
+      "openChat": "فتح المحادثة",
+      "newMessages": "رسائل جديدة",
+      "unreadMessage": "رسالة غير مقروءة"
+    },
+    "status": {
+      "connecting": "جاري الاتصال...",
+      "connected": "متصل",
+      "disconnected": "غير متصل",
+      "reconnecting": "إعادة الاتصال...",
+      "connectionLost": "فقدان الاتصال"
+    },
+    "navigation": {
+      "scrollToBottom": "التمرير إلى الأسفل",
+      "newMessages": "رسائل جديدة",
+      "newMessage": "رسالة جديدة"
+    },
+    "branding": {
+      "poweredBy": "مدعوم بواسطة كوجنتس"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "اكتب رسالة...",
+      "submit": "إرسال",
+      "typing": "يكتب"
+    },
+    "button": {
+      "open": "فتح المحادثة",
+      "close": "إغلاق المحادثة",
+      "cancel": "إلغاء",
+      "submit": "إرسال"
+    },
+    "header": {
+      "title": "المحادثة",
+      "online": "متصل",
+      "offline": "غير متصل",
+      "connecting": "جاري الاتصال",
+      "connected": "متصل بالوكيل المباشر",
+      "disconnected": "منقطع عن الوكيل المباشر",
+      "aiAssistant": "مساعد ذكي",
+      "liveAgent": "وكيل مباشر",
+      "liveChatSupport": "دعم المحادثة المباشرة"
+    },
+    "messages": {
+      "agent": "وكيل",
+      "aiAgent": "وكيل ذكي",
+      "liveAgent": "وكيل مباشر",
+      "typing": "الوكيل يكتب",
+      "connecting": "الاتصال بالمحادثة",
+      "connectionLost": "فقدان الاتصال",
+      "socketConnected": "تم الاتصال بنجاح",
+      "newMessage": "رسالة جديدة",
+      "unreadMessages": "رسائل غير مقروءة"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "مرحباً! كيف يمكننا مساعدتك؟",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "question": "السؤال",
+        "enterName": "أدخل اسمك",
+        "enterEmail": "أدخل بريدك الإلكتروني",
+        "enterPhone": "أدخل هاتفك",
+        "enterQuery": "يرجى إدخال استفسارك هنا...",
+        "optional": "(اختياري)",
+        "required": "هذا الحقل مطلوب.",
+        "sendMessage": "إرسال الرسالة"
+      },
+      "postChatForm": {
+        "greeting": "شكراً لك على ملاحظاتك!",
+        "rating": "التقييم",
+        "feedback": "الملاحظات",
+        "enterFeedback": "يرجى إدخال ملاحظاتك هنا...",
+        "submit": "إرسال",
+        "optional": "(اختياري)",
+        "required": "يرجى تقديم تقييم."
+      },
+      "offlineChatForm": {
+        "greeting": "عذراً، نحن غير متصلين في الوقت الحالي. اترك رسالة وسنعاود الاتصال بك.",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "question": "السؤال",
+        "enterName": "أدخل اسمك",
+        "enterEmail": "أدخل بريدك الإلكتروني",
+        "enterPhone": "أدخل رقم هاتفك",
+        "enterQuery": "يرجى إدخال استفسارك هنا...",
+        "sendMessage": "إرسال الرسالة",
+        "optional": "(اختياري)",
+        "required": "هذا الحقل مطلوب."
+      }
+    },
+    "errors": {
+      "failed": "فشل",
+      "error": "خطأ",
+      "validationError": "خطأ في التحقق",
+      "fieldRequired": "هذا الحقل مطلوب.",
+      "fillAllFields": "يرجى ملء جميع الحقول المطلوبة قبل الإرسال.",
+      "connectionError": "حدث خطأ في الاتصال",
+      "uploadFailed": "فشل الرفع",
+      "processingFailed": "فشل المعالجة"
+    },
+    "file": {
+      "loading": "جاري التحميل",
+      "cancel": "إلغاء الرفع",
+      "remove": "إزالة الملف",
+      "upload": "رفع",
+      "failed": "فشل الرفع",
+      "dropFilesHere": "أفلت الملفات هنا للرفع"
+    },
+    "accessibility": {
+      "chatOpened": "تم فتح المحادثة",
+      "chatClosed": "تم إغلاق المحادثة",
+      "chatButtonDisabled": "زر المحادثة معطل",
+      "chatButtonEnabled": "زر المحادثة مفعل",
+      "chatButtonFocused": "زر المحادثة مركز عليه",
+      "fullscreen": "المحادثة الآن في وضع ملء الشاشة",
+      "windowed": "المحادثة في وضع النافذة",
+      "scrollToBottom": "التمرير إلى الأسفل",
+      "closeChat": "إغلاق المحادثة",
+      "openChat": "فتح المحادثة",
+      "newMessages": "رسائل جديدة",
+      "unreadMessage": "رسالة غير مقروءة"
+    }
+  }
+}

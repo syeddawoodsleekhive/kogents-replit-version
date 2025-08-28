@@ -1,0 +1,272 @@
+{
+  "mainPage": {
+    "title": "Kogents 스타일 채팅 위젯",
+    "description": "모든 웹사이트에 임베드할 수 있는 맞춤형 채팅 위젯입니다.",
+    "buttons": {
+      "viewDemo": "데모 보기",
+      "documentation": "문서"
+    },
+    "integration": {
+      "title": "빠른 통합",
+      "description": "채팅 위젯을 임베드하려면 이 스크립트를 웹사이트에 추가하세요:"
+    },
+    "debug": {
+      "currentLanguage": "현재 언어",
+      "direction": "방향",
+      "rtl": "오른쪽에서 왼쪽으로",
+      "browserLanguage": "브라우저 언어"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "메시지를 입력하세요...",
+      "send": "메시지 보내기",
+      "submit": "전송",
+      "typing": "입력 중"
+    },
+    "button": {
+      "open": "채팅 열기",
+      "close": "채팅 닫기",
+      "send": "보내기",
+      "cancel": "취소",
+      "submit": "전송"
+    },
+    "header": {
+      "title": "채팅",
+      "online": "온라인",
+      "offline": "오프라인",
+      "connecting": "연결 중",
+      "connected": "실시간 상담원에 연결됨",
+      "disconnected": "실시간 상담원과 연결 해제됨",
+      "aiAssistant": "AI 어시스턴트",
+      "liveAgent": "실시간 상담원",
+      "liveChatSupport": "실시간 채팅 지원"
+    },
+    "messages": {
+      "agent": "상담원",
+      "aiAgent": "AI 상담원",
+      "liveAgent": "실시간 상담원",
+      "typing": "상담원이 입력 중입니다",
+      "connecting": "채팅에 연결 중",
+      "connectionLost": "연결이 끊어졌습니다",
+      "socketConnected": "소켓 연결 성공",
+      "newMessage": "새 메시지",
+      "unreadMessages": "읽지 않은 메시지"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "환영합니다! 어떻게 도와드릴까요?",
+        "name": "이름",
+        "email": "이메일",
+        "phone": "전화번호",
+        "question": "질문",
+        "enterName": "이름을 입력하세요",
+        "enterEmail": "이메일을 입력하세요",
+        "enterPhone": "전화번호를 입력하세요",
+        "enterQuery": "여기에 질문을 입력하세요...",
+        "optional": "(선택사항)",
+        "required": "이 필드는 필수입니다.",
+        "sendMessage": "메시지 보내기"
+      },
+      "postChatForm": {
+        "greeting": "피드백을 주셔서 감사합니다!",
+        "rating": "평가",
+        "feedback": "피드백",
+        "enterFeedback": "여기에 피드백을 입력하세요...",
+        "submit": "전송",
+        "optional": "(선택사항)",
+        "required": "평가를 입력해 주세요."
+      },
+      "offlineChatForm": {
+        "greeting": "죄송합니다. 현재 온라인 상태가 아닙니다. 메시지를 남겨주시면 연락드리겠습니다.",
+        "name": "이름",
+        "email": "이메일",
+        "phone": "전화번호",
+        "question": "질문",
+        "enterName": "이름을 입력하세요",
+        "enterEmail": "이메일을 입력하세요",
+        "enterPhone": "전화번호를 입력하세요",
+        "enterQuery": "여기에 질문을 입력하세요...",
+        "sendMessage": "메시지 보내기",
+        "optional": "(선택사항)",
+        "required": "이 필드는 필수입니다."
+      }
+    },
+    "errors": {
+      "failed": "실패",
+      "error": "오류",
+      "validationError": "유효성 검사 오류",
+      "fieldRequired": "이 필드는 필수입니다.",
+      "fillAllFields": "전송하기 전에 모든 필수 필드를 입력하세요.",
+      "connectionError": "연결 오류가 발생했습니다",
+      "uploadFailed": "업로드 실패",
+      "processingFailed": "처리 실패"
+    },
+    "file": {
+      "loading": "로딩 중",
+      "cancel": "업로드 취소",
+      "remove": "파일 제거",
+      "upload": "업로드",
+      "failed": "업로드 실패"
+    },
+    "accessibility": {
+      "chatOpened": "채팅이 열렸습니다",
+      "chatClosed": "채팅이 닫혔습니다",
+      "chatButtonDisabled": "채팅 버튼 비활성화",
+      "chatButtonEnabled": "채팅 버튼 활성화",
+      "chatButtonFocused": "채팅 버튼에 포커스",
+      "fullscreen": "채팅이 전체 화면입니다",
+      "windowed": "채팅이 창 모드입니다",
+      "scrollToBottom": "아래로 스크롤",
+      "closeChat": "채팅 닫기",
+      "openChat": "채팅 열기"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "AI 어시스턴트",
+      "liveAgent": "실시간 상담원",
+      "liveChatSupport": "실시간 채팅 지원",
+      "online": "온라인",
+      "offline": "오프라인",
+      "connecting": "연결 중",
+      "connected": "실시간 상담원에 연결됨",
+      "disconnected": "실시간 상담원과 연결 해제됨",
+      "fullscreen": "전체 화면",
+      "minimize": "최소화",
+      "close": "채팅 닫기"
+    },
+    "button": {
+      "open": "채팅 열기",
+      "close": "채팅 닫기",
+      "chat": "채팅",
+      "cancel": "취소",
+      "submit": "전송",
+      "send": "보내기",
+      "sendMessage": "메시지 보내기"
+    },
+    "input": {
+      "placeholder": "메시지를 입력하세요...",
+      "typing": "입력 중",
+      "send": "보내기",
+      "attachment": "첨부",
+      "emoji": "이모지",
+      "moreOptions": "더 많은 옵션",
+      "attachFiles": "파일 첨부 (또는 드래그 앤 드롭)"
+    },
+    "messages": {
+      "agent": "상담원",
+      "aiAgent": "AI 상담원",
+      "liveAgent": "실시간 상담원",
+      "typing": "상담원이 입력 중입니다",
+      "connecting": "채팅에 연결 중",
+      "connectionLost": "연결이 끊어졌습니다",
+      "socketConnected": "소켓 연결 성공",
+      "newMessage": "새 메시지",
+      "unreadMessages": "읽지 않은 메시지",
+      "processing": "파일 처리 중...",
+      "processingMessage": "메시지 처리 중...",
+      "pleaseWait": "파일을 준비하는 동안 잠시 기다려 주세요",
+      "justNow": "방금"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "환영합니다! 어떻게 도와드릴까요?",
+        "name": "이름",
+        "email": "이메일",
+        "phone": "전화번호",
+        "question": "질문",
+        "enterName": "이름을 입력하세요",
+        "enterEmail": "이메일을 입력하세요",
+        "enterPhone": "전화번호를 입력하세요",
+        "enterQuery": "여기에 질문을 입력하세요...",
+        "optional": "(선택사항)",
+        "required": "이 필드는 필수입니다.",
+        "sendMessage": "메시지 보내기"
+      },
+      "postChatForm": {
+        "greeting": "피드백을 주셔서 감사합니다!",
+        "rating": "평가",
+        "feedback": "피드백",
+        "enterFeedback": "여기에 피드백을 입력하세요...",
+        "submit": "전송",
+        "optional": "(선택사항)",
+        "required": "평가를 입력해 주세요."
+      },
+      "offlineChatForm": {
+        "greeting": "죄송합니다. 현재 온라인 상태가 아닙니다. 메시지를 남겨주시면 연락드리겠습니다.",
+        "name": "이름",
+        "email": "이메일",
+        "phone": "전화번호",
+        "question": "질문",
+        "enterName": "이름을 입력하세요",
+        "enterEmail": "이메일을 입력하세요",
+        "enterPhone": "전화번호를 입력하세요",
+        "enterQuery": "여기에 질문을 입력하세요...",
+        "sendMessage": "메시지 보내기",
+        "optional": "(선택사항)",
+        "required": "이 필드는 필수입니다."
+      },
+      "badgeChatForm": {
+        "greeting": "오늘 어떻게 도와드릴까요?",
+        "placeholder": "여기에 메시지를 입력하세요...",
+        "send": "보내기"
+      },
+      "userInfoForm": {
+        "title": "사용자 정보",
+        "name": "이름",
+        "email": "이메일",
+        "phone": "전화번호",
+        "save": "저장",
+        "cancel": "취소"
+      }
+    },
+    "errors": {
+      "failed": "실패",
+      "error": "오류",
+      "validationError": "유효성 검사 오류",
+      "fieldRequired": "이 필드는 필수입니다.",
+      "fillAllFields": "전송하기 전에 모든 필수 필드를 입력하세요.",
+      "connectionError": "연결 오류가 발생했습니다",
+      "uploadFailed": "업로드 실패",
+      "processingFailed": "처리 실패"
+    },
+    "file": {
+      "loading": "로딩 중",
+      "cancel": "업로드 취소",
+      "remove": "파일 제거",
+      "upload": "업로드",
+      "failed": "업로드 실패",
+      "dropFilesHere": "업로드하려면 여기에 파일을 드롭하세요"
+    },
+    "accessibility": {
+      "chatOpened": "채팅이 열렸습니다",
+      "chatClosed": "채팅이 닫혔습니다",
+      "chatButtonDisabled": "채팅 버튼 비활성화",
+      "chatButtonEnabled": "채팅 버튼 활성화",
+      "chatButtonFocused": "채팅 버튼에 포커스",
+      "fullscreen": "채팅이 전체 화면입니다",
+      "windowed": "채팅이 창 모드입니다",
+      "scrollToBottom": "아래로 스크롤",
+      "closeChat": "채팅 닫기",
+      "openChat": "채팅 열기",
+      "newMessages": "새 메시지",
+      "unreadMessage": "읽지 않은 메시지"
+    },
+    "status": {
+      "connecting": "연결 중...",
+      "connected": "연결됨",
+      "disconnected": "연결 해제됨",
+      "reconnecting": "재연결 중...",
+      "connectionLost": "연결이 끊어졌습니다"
+    },
+    "navigation": {
+      "scrollToBottom": "아래로 스크롤",
+      "newMessages": "새 메시지",
+      "newMessage": "새 메시지"
+    },
+    "branding": {
+      "poweredBy": "Kogents 제공"
+    }
+  }
+}

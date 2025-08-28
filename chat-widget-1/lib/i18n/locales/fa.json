@@ -1,0 +1,270 @@
+{
+  "mainPage": {
+    "title": "ویجت چت به سبک کوگنتس",
+    "description": "ویجت چت قابل تنظیم که می‌تواند در هر وب‌سایتی جاسازی شود.",
+    "buttons": {
+      "viewDemo": "مشاهده نسخه نمایشی",
+      "documentation": "مستندات"
+    },
+    "integration": {
+      "title": "ادغام سریع",
+      "description": "این اسکریپت را به وب‌سایت خود اضافه کنید تا ویجت چت را جاسازی کنید:"
+    },
+    "debug": {
+      "currentLanguage": "زبان فعلی",
+      "direction": "جهت",
+      "rtl": "راست به چپ",
+      "browserLanguage": "زبان مرورگر"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "پیام تایپ کنید...",
+      "send": "ارسال پیام",
+      "submit": "ارسال",
+      "typing": "در حال تایپ"
+    },
+    "button": {
+      "open": "باز کردن چت",
+      "close": "بستن چت",
+      "send": "ارسال",
+      "cancel": "لغو",
+      "submit": "ارسال"
+    },
+    "header": {
+      "title": "چت",
+      "online": "آنلاین",
+      "offline": "آفلاین",
+      "connecting": "در حال اتصال",
+      "connected": "متصل به نماینده زنده",
+      "disconnected": "قطع اتصال از نماینده زنده",
+      "aiAssistant": "دستیار هوش مصنوعی",
+      "liveAgent": "نماینده زنده",
+      "liveChatSupport": "پشتیبانی چت زنده"
+    },
+    "messages": {
+      "agent": "نماینده",
+      "aiAgent": "نماینده هوش مصنوعی",
+      "liveAgent": "نماینده زنده",
+      "typing": "نماینده در حال تایپ است",
+      "connecting": "اتصال به چت",
+      "connectionLost": "اتصال قطع شد",
+      "socketConnected": "سوکت با موفقیت متصل شد",
+      "newMessage": "پیام جدید",
+      "unreadMessages": "پیام‌های خوانده نشده"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "خوش آمدید! چگونه می‌توانیم کمکتان کنیم؟",
+        "name": "نام",
+        "email": "ایمیل",
+        "phone": "شماره تلفن",
+        "question": "سوال",
+        "enterName": "نام خود را وارد کنید",
+        "enterEmail": "ایمیل خود را وارد کنید",
+        "enterPhone": "تلفن خود را وارد کنید",
+        "enterQuery": "لطفاً سوال خود را اینجا وارد کنید...",
+        "optional": "(اختیاری)",
+        "required": "این فیلد الزامی است.",
+        "sendMessage": "ارسال پیام"
+      },
+      "postChatForm": {
+        "greeting": "از بازخورد شما متشکریم!",
+        "rating": "امتیاز",
+        "feedback": "بازخورد",
+        "enterFeedback": "لطفاً بازخورد خود را اینجا وارد کنید...",
+        "submit": "ارسال",
+        "optional": "(اختیاری)",
+        "required": "لطفاً امتیازی ارائه دهید."
+      },
+      "offlineChatForm": {
+        "greeting": "متأسفیم، در حال حاضر آنلاین نیستیم. پیامی بگذارید و با شما تماس خواهیم گرفت.",
+        "name": "نام",
+        "email": "ایمیل",
+        "phone": "شماره تلفن",
+        "question": "سوال",
+        "enterName": "نام خود را وارد کنید",
+        "enterEmail": "ایمیل خود را وارد کنید",
+        "enterPhone": "شماره تلفن خود را وارد کنید",
+        "enterQuery": "لطفاً سوال خود را اینجا وارد کنید...",
+        "sendMessage": "ارسال پیام",
+        "optional": "(اختیاری)",
+        "required": "این فیلد الزامی است."
+      }
+    },
+    "errors": {
+      "failed": "ناموفق",
+      "error": "خطا",
+      "validationError": "خطای اعتبارسنجی",
+      "fieldRequired": "این فیلد الزامی است.",
+      "fillAllFields": "لطفاً قبل از ارسال تمام فیلدهای الزامی را پر کنید.",
+      "connectionError": "خطای اتصال رخ داد",
+      "uploadFailed": "آپلود ناموفق",
+      "processingFailed": "پردازش ناموفق"
+    },
+    "file": {
+      "loading": "در حال بارگذاری",
+      "cancel": "لغو آپلود",
+      "remove": "حذف فایل",
+      "upload": "آپلود",
+      "failed": "آپلود ناموفق"
+    },
+    "accessibility": {
+      "chatOpened": "چت باز شد",
+      "chatClosed": "چت بسته شد",
+      "chatButtonDisabled": "دکمه چت غیرفعال",
+      "chatButtonEnabled": "دکمه چت فعال",
+      "chatButtonFocused": "دکمه چت متمرکز",
+      "fullscreen": "چت اکنون تمام صفحه است",
+      "windowed": "چت در پنجره",
+      "scrollToBottom": "اسکرول به پایین"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "دستیار هوش مصنوعی",
+      "liveAgent": "نماینده زنده",
+      "liveChatSupport": "پشتیبانی چت زنده",
+      "online": "آنلاین",
+      "offline": "آفلاین",
+      "connecting": "در حال اتصال",
+      "connected": "متصل به نماینده زنده",
+      "disconnected": "قطع اتصال از نماینده زنده",
+      "fullscreen": "تمام صفحه",
+      "minimize": "کوچک کردن",
+      "close": "بستن چت"
+    },
+    "button": {
+      "open": "باز کردن چت",
+      "close": "بستن چت",
+      "chat": "چت",
+      "cancel": "لغو",
+      "submit": "ارسال",
+      "send": "ارسال",
+      "sendMessage": "ارسال پیام"
+    },
+    "input": {
+      "placeholder": "پیام تایپ کنید...",
+      "typing": "در حال تایپ",
+      "send": "ارسال",
+      "attachment": "پیوست",
+      "emoji": "ایموجی",
+      "moreOptions": "گزینه‌های بیشتر",
+      "attachFiles": "فایل‌ها را پیوست کنید (یا بکشید و رها کنید)"
+    },
+    "messages": {
+      "agent": "نماینده",
+      "aiAgent": "نماینده هوش مصنوعی",
+      "liveAgent": "نماینده زنده",
+      "typing": "نماینده در حال تایپ است",
+      "connecting": "اتصال به چت",
+      "connectionLost": "اتصال قطع شد",
+      "socketConnected": "سوکت با موفقیت متصل شد",
+      "newMessage": "پیام جدید",
+      "unreadMessages": "پیام‌های خوانده نشده",
+      "processing": "در حال پردازش فایل‌ها...",
+      "processingMessage": "در حال پردازش پیام شما...",
+      "pleaseWait": "لطفاً صبر کنید تا فایل‌های شما آماده شوند",
+      "justNow": "همین الان"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "خوش آمدید! چگونه می‌توانیم کمکتان کنیم؟",
+        "name": "نام",
+        "email": "ایمیل",
+        "phone": "شماره تلفن",
+        "question": "سوال",
+        "enterName": "نام خود را وارد کنید",
+        "enterEmail": "ایمیل خود را وارد کنید",
+        "enterPhone": "تلفن خود را وارد کنید",
+        "enterQuery": "لطفاً سوال خود را اینجا وارد کنید...",
+        "optional": "(اختیاری)",
+        "required": "این فیلد الزامی است.",
+        "sendMessage": "ارسال پیام"
+      },
+      "postChatForm": {
+        "greeting": "از بازخورد شما متشکریم!",
+        "rating": "امتیاز",
+        "feedback": "بازخورد",
+        "enterFeedback": "لطفاً بازخورد خود را اینجا وارد کنید...",
+        "submit": "ارسال",
+        "optional": "(اختیاری)",
+        "required": "لطفاً امتیازی ارائه دهید."
+      },
+      "offlineChatForm": {
+        "greeting": "متأسفیم، در حال حاضر آنلاین نیستیم. پیامی بگذارید و با شما تماس خواهیم گرفت.",
+        "name": "نام",
+        "email": "ایمیل",
+        "phone": "شماره تلفن",
+        "question": "سوال",
+        "enterName": "نام خود را وارد کنید",
+        "enterEmail": "ایمیل خود را وارد کنید",
+        "enterPhone": "شماره تلفن خود را وارد کنید",
+        "enterQuery": "لطفاً سوال خود را اینجا وارد کنید...",
+        "sendMessage": "ارسال پیام",
+        "optional": "(اختیاری)",
+        "required": "این فیلد الزامی است."
+      },
+      "badgeChatForm": {
+        "greeting": "چگونه می‌توانیم امروز کمکتان کنیم؟",
+        "placeholder": "پیام خود را اینجا تایپ کنید...",
+        "send": "ارسال"
+      },
+      "userInfoForm": {
+        "title": "اطلاعات کاربر",
+        "name": "نام",
+        "email": "ایمیل",
+        "phone": "تلفن",
+        "save": "ذخیره",
+        "cancel": "لغو"
+      }
+    },
+    "errors": {
+      "failed": "ناموفق",
+      "error": "خطا",
+      "validationError": "خطای اعتبارسنجی",
+      "fieldRequired": "این فیلد الزامی است.",
+      "fillAllFields": "لطفاً قبل از ارسال تمام فیلدهای الزامی را پر کنید.",
+      "connectionError": "خطای اتصال رخ داد",
+      "uploadFailed": "آپلود ناموفق",
+      "processingFailed": "پردازش ناموفق"
+    },
+    "file": {
+      "loading": "در حال بارگذاری",
+      "cancel": "لغو آپلود",
+      "remove": "حذف فایل",
+      "upload": "آپلود",
+      "failed": "آپلود ناموفق",
+      "dropFilesHere": "فایل‌ها را اینجا رها کنید تا آپلود شوند"
+    },
+    "accessibility": {
+      "chatOpened": "چت باز شد",
+      "chatClosed": "چت بسته شد",
+      "chatButtonDisabled": "دکمه چت غیرفعال",
+      "chatButtonEnabled": "دکمه چت فعال",
+      "chatButtonFocused": "دکمه چت متمرکز",
+      "fullscreen": "چت اکنون تمام صفحه است",
+      "windowed": "چت در پنجره",
+      "scrollToBottom": "اسکرول به پایین",
+      "closeChat": "بستن چت",
+      "openChat": "باز کردن چت",
+      "newMessages": "پیام‌های جدید",
+      "unreadMessage": "پیام خوانده نشده"
+    },
+    "status": {
+      "connecting": "در حال اتصال...",
+      "connected": "متصل",
+      "disconnected": "قطع اتصال",
+      "reconnecting": "در حال اتصال مجدد...",
+      "connectionLost": "اتصال قطع شد"
+    },
+    "navigation": {
+      "scrollToBottom": "اسکرول به پایین",
+      "newMessages": "پیام‌های جدید",
+      "newMessage": "پیام جدید"
+    },
+    "branding": {
+      "poweredBy": "قدرت گرفته از کوگنتس"
+    }
+  }
+}

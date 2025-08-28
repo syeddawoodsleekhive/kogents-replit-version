@@ -1,0 +1,270 @@
+{
+  "mainPage": {
+    "title": "Widget de Chat al Estilo Kogents",
+    "description": "Un widget de chat personalizable que se puede incrustar en cualquier sitio web.",
+    "buttons": {
+      "viewDemo": "Ver Demo",
+      "documentation": "Documentación"
+    },
+    "integration": {
+      "title": "Integración Rápida",
+      "description": "Agrega este script a tu sitio web para incrustar el widget de chat:"
+    },
+    "debug": {
+      "currentLanguage": "Idioma Actual",
+      "direction": "Dirección",
+      "rtl": "De Derecha a Izquierda",
+      "browserLanguage": "Idioma del Navegador"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "Escribe un mensaje...",
+      "submit": "Enviar",
+      "typing": "escribiendo"
+    },
+    "button": {
+      "open": "Abrir chat",
+      "close": "Cerrar chat",
+      "cancel": "Cancelar",
+      "submit": "Enviar"
+    },
+    "header": {
+      "title": "Chat",
+      "online": "En línea",
+      "offline": "Desconectado",
+      "connecting": "Conectando",
+      "connected": "Conectado al agente en vivo",
+      "disconnected": "Desconectado del agente en vivo",
+      "aiAssistant": "Asistente IA",
+      "liveAgent": "Agente en Vivo",
+      "liveChatSupport": "Soporte de Chat en Vivo"
+    },
+    "messages": {
+      "agent": "Agente",
+      "aiAgent": "Agente IA",
+      "liveAgent": "Agente en Vivo",
+      "typing": "El agente está escribiendo",
+      "connecting": "Conectando al chat",
+      "connectionLost": "Conexión perdida",
+      "socketConnected": "Socket conectado exitosamente",
+      "newMessage": "Nuevo mensaje",
+      "unreadMessages": "mensajes no leídos"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "¡Bienvenido! ¿Cómo podemos ayudarte?",
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phone": "Número de teléfono",
+        "question": "Pregunta",
+        "enterName": "Ingresa tu nombre",
+        "enterEmail": "Ingresa tu correo electrónico",
+        "enterPhone": "Ingresa tu teléfono",
+        "enterQuery": "Por favor ingresa tu consulta aquí...",
+        "optional": "(opcional)",
+        "required": "Este campo es obligatorio.",
+        "sendMessage": "Enviar Mensaje"
+      },
+      "postChatForm": {
+        "greeting": "¡Gracias por tus comentarios!",
+        "rating": "Calificación",
+        "feedback": "Comentarios",
+        "enterFeedback": "Por favor ingresa tus comentarios aquí...",
+        "submit": "Enviar",
+        "optional": "(opcional)",
+        "required": "Por favor proporciona una calificación."
+      },
+      "offlineChatForm": {
+        "greeting": "Lo sentimos, no estamos en línea en este momento. Deja un mensaje y te responderemos.",
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phone": "Número de teléfono",
+        "question": "Pregunta",
+        "enterName": "Ingresa tu nombre",
+        "enterEmail": "Ingresa tu correo electrónico",
+        "enterPhone": "Ingresa tu número de teléfono",
+        "enterQuery": "Por favor ingresa tu consulta aquí...",
+        "sendMessage": "Enviar Mensaje",
+        "optional": "(opcional)",
+        "required": "Este campo es obligatorio."
+      }
+    },
+    "errors": {
+      "failed": "Falló",
+      "error": "Error",
+      "validationError": "Error de validación",
+      "fieldRequired": "Este campo es obligatorio.",
+      "fillAllFields": "Por favor completa todos los campos obligatorios antes de enviar.",
+      "connectionError": "Ocurrió un error de conexión",
+      "uploadFailed": "Falló la subida",
+      "processingFailed": "Falló el procesamiento"
+    },
+    "file": {
+      "loading": "Cargando",
+      "cancel": "Cancelar subida",
+      "remove": "Eliminar archivo",
+      "upload": "Subir",
+      "failed": "Falló la subida"
+    },
+    "accessibility": {
+      "chatOpened": "Chat abierto",
+      "chatClosed": "Chat cerrado",
+      "chatButtonDisabled": "Botón de chat deshabilitado",
+      "chatButtonEnabled": "Botón de chat habilitado",
+      "chatButtonFocused": "Botón de chat enfocado",
+      "fullscreen": "El chat ahora está en pantalla completa",
+      "windowed": "El chat está en ventana",
+      "scrollToBottom": "Desplazarse hacia abajo",
+      "closeChat": "cerrar chat",
+      "openChat": "abrir chat"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "Asistente IA",
+      "liveAgent": "Agente en Vivo",
+      "liveChatSupport": "Soporte de Chat en Vivo",
+      "online": "En línea",
+      "offline": "Desconectado",
+      "connecting": "Conectando",
+      "connected": "Conectado al agente en vivo",
+      "disconnected": "Desconectado del agente en vivo",
+      "fullscreen": "Pantalla Completa",
+      "minimize": "Minimizar",
+      "close": "Cerrar chat"
+    },
+    "button": {
+      "open": "Abrir chat",
+      "close": "Cerrar chat",
+      "chat": "Chat",
+      "cancel": "Cancelar",
+      "submit": "Enviar",
+      "send": "Enviar",
+      "sendMessage": "Enviar Mensaje"
+    },
+    "input": {
+      "placeholder": "Escribe un mensaje...",
+      "typing": "escribiendo",
+      "send": "Enviar",
+      "attachment": "Adjunto",
+      "emoji": "Emoji",
+      "moreOptions": "Más opciones",
+      "attachFiles": "Adjuntar archivos (o arrastrar y soltar)"
+    },
+    "messages": {
+      "agent": "Agente",
+      "aiAgent": "Agente IA",
+      "liveAgent": "Agente en Vivo",
+      "typing": "El agente está escribiendo",
+      "connecting": "Conectando al chat",
+      "connectionLost": "Conexión perdida",
+      "socketConnected": "Socket conectado exitosamente",
+      "newMessage": "Nuevo mensaje",
+      "unreadMessages": "mensajes no leídos",
+      "processing": "Procesando archivos...",
+      "processingMessage": "Procesando tu mensaje...",
+      "pleaseWait": "Por favor espera mientras preparamos tus archivos",
+      "justNow": "Ahora mismo"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "¡Bienvenido! ¿Cómo podemos ayudarte?",
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phone": "Número de teléfono",
+        "question": "Pregunta",
+        "enterName": "Ingresa tu nombre",
+        "enterEmail": "Ingresa tu correo electrónico",
+        "enterPhone": "Ingresa tu teléfono",
+        "enterQuery": "Por favor ingresa tu consulta aquí...",
+        "optional": "(opcional)",
+        "required": "Este campo es obligatorio.",
+        "sendMessage": "Enviar Mensaje"
+      },
+      "postChatForm": {
+        "greeting": "¡Gracias por tus comentarios!",
+        "rating": "Calificación",
+        "feedback": "Comentarios",
+        "enterFeedback": "Por favor ingresa tus comentarios aquí...",
+        "submit": "Enviar",
+        "optional": "(opcional)",
+        "required": "Por favor proporciona una calificación."
+      },
+      "offlineChatForm": {
+        "greeting": "Lo sentimos, no estamos en línea en este momento. Deja un mensaje y te responderemos.",
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phone": "Número de teléfono",
+        "question": "Pregunta",
+        "enterName": "Ingresa tu nombre",
+        "enterEmail": "Ingresa tu correo electrónico",
+        "enterPhone": "Ingresa tu número de teléfono",
+        "enterQuery": "Por favor ingresa tu consulta aquí...",
+        "sendMessage": "Enviar Mensaje",
+        "optional": "(opcional)",
+        "required": "Este campo es obligatorio."
+      },
+      "badgeChatForm": {
+        "greeting": "¿Cómo podemos ayudarte hoy?",
+        "placeholder": "Escribe tu mensaje aquí...",
+        "send": "Enviar"
+      },
+      "userInfoForm": {
+        "title": "Información del Usuario",
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "save": "Guardar",
+        "cancel": "Cancelar"
+      }
+    },
+    "errors": {
+      "failed": "Falló",
+      "error": "Error",
+      "validationError": "Error de validación",
+      "fieldRequired": "Este campo es obligatorio.",
+      "fillAllFields": "Por favor completa todos los campos obligatorios antes de enviar.",
+      "connectionError": "Ocurrió un error de conexión",
+      "uploadFailed": "Falló la subida",
+      "processingFailed": "Falló el procesamiento"
+    },
+    "file": {
+      "loading": "Cargando",
+      "cancel": "Cancelar subida",
+      "remove": "Eliminar archivo",
+      "upload": "Subir",
+      "failed": "Falló la subida",
+      "dropFilesHere": "Suelta archivos aquí para subir"
+    },
+    "accessibility": {
+      "chatOpened": "Chat abierto",
+      "chatClosed": "Chat cerrado",
+      "chatButtonDisabled": "Botón de chat deshabilitado",
+      "chatButtonEnabled": "Botón de chat habilitado",
+      "chatButtonFocused": "Botón de chat enfocado",
+      "fullscreen": "El chat ahora está en pantalla completa",
+      "windowed": "El chat está en ventana",
+      "scrollToBottom": "Desplazarse hacia abajo",
+      "closeChat": "cerrar chat",
+      "openChat": "abrir chat",
+      "newMessages": "mensajes nuevos",
+      "unreadMessage": "mensaje no leído"
+    },
+    "status": {
+      "connecting": "Conectando...",
+      "connected": "Conectado",
+      "disconnected": "Desconectado",
+      "reconnecting": "Reconectando...",
+      "connectionLost": "Conexión perdida"
+    },
+    "navigation": {
+      "scrollToBottom": "Desplazarse hacia abajo",
+      "newMessages": "mensajes nuevos",
+      "newMessage": "mensaje nuevo"
+    },
+    "branding": {
+      "poweredBy": "Desarrollado por Kogents"
+    }
+  }
+}

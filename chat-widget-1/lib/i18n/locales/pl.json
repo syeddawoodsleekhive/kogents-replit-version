@@ -1,0 +1,270 @@
+{
+  "mainPage": {
+    "title": "Widget Czatu w Stylu Kogents",
+    "description": "Konfigurowalny widget czatu, który można osadzić na dowolnej stronie internetowej.",
+    "buttons": {
+      "viewDemo": "Zobacz Demo",
+      "documentation": "Dokumentacja"
+    },
+    "integration": {
+      "title": "Szybka Integracja",
+      "description": "Dodaj ten skrypt do swojej strony, aby osadzić widget czatu:"
+    },
+    "debug": {
+      "currentLanguage": "Aktualny Język",
+      "direction": "Kierunek",
+      "rtl": "Od Prawej do Lewej",
+      "browserLanguage": "Język Przeglądarki"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "Napisz wiadomość...",
+      "submit": "Wyślij",
+      "typing": "pisze"
+    },
+    "button": {
+      "open": "Otwórz czat",
+      "close": "Zamknij czat",
+      "cancel": "Anuluj",
+      "submit": "Wyślij"
+    },
+    "header": {
+      "title": "Czat",
+      "online": "Online",
+      "offline": "Offline",
+      "connecting": "Łączenie",
+      "connected": "Połączono z agentem na żywo",
+      "disconnected": "Rozłączono z agentem na żywo",
+      "aiAssistant": "Asystent AI",
+      "liveAgent": "Agent na żywo",
+      "liveChatSupport": "Wsparcie czatu na żywo"
+    },
+    "messages": {
+      "agent": "Agent",
+      "aiAgent": "Agent AI",
+      "liveAgent": "Agent na żywo",
+      "typing": "Agent pisze",
+      "connecting": "Łączenie z czatem",
+      "connectionLost": "Utracono połączenie",
+      "socketConnected": "Socket połączony pomyślnie",
+      "newMessage": "Nowa wiadomość",
+      "unreadMessages": "nieprzeczytane wiadomości"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "Witamy! Jak możemy Ci pomóc?",
+        "name": "Imię",
+        "email": "E-mail",
+        "phone": "Numer telefonu",
+        "question": "Pytanie",
+        "enterName": "Wprowadź swoje imię",
+        "enterEmail": "Wprowadź swój e-mail",
+        "enterPhone": "Wprowadź swój telefon",
+        "enterQuery": "Wprowadź tutaj swoje pytanie...",
+        "optional": "(opcjonalne)",
+        "required": "To pole jest wymagane.",
+        "sendMessage": "Wyślij wiadomość"
+      },
+      "postChatForm": {
+        "greeting": "Dziękujemy za opinię!",
+        "rating": "Ocena",
+        "feedback": "Opinia",
+        "enterFeedback": "Wprowadź tutaj swoją opinię...",
+        "submit": "Wyślij",
+        "optional": "(opcjonalne)",
+        "required": "Proszę podać ocenę."
+      },
+      "offlineChatForm": {
+        "greeting": "Przepraszamy, nie jesteśmy teraz online. Zostaw wiadomość, a skontaktujemy się z Tobą.",
+        "name": "Imię",
+        "email": "E-mail",
+        "phone": "Numer telefonu",
+        "question": "Pytanie",
+        "enterName": "Wprowadź swoje imię",
+        "enterEmail": "Wprowadź swój e-mail",
+        "enterPhone": "Wprowadź swój numer telefonu",
+        "enterQuery": "Wprowadź tutaj swoje pytanie...",
+        "sendMessage": "Wyślij wiadomość",
+        "optional": "(opcjonalne)",
+        "required": "To pole jest wymagane."
+      }
+    },
+    "errors": {
+      "failed": "Niepowodzenie",
+      "error": "Błąd",
+      "validationError": "Błąd walidacji",
+      "fieldRequired": "To pole jest wymagane.",
+      "fillAllFields": "Wypełnij wszystkie wymagane pola przed wysłaniem.",
+      "connectionError": "Wystąpił błąd połączenia",
+      "uploadFailed": "Przesyłanie nie powiodło się",
+      "processingFailed": "Przetwarzanie nie powiodło się"
+    },
+    "file": {
+      "loading": "Ładowanie",
+      "cancel": "Anuluj przesyłanie",
+      "remove": "Usuń plik",
+      "upload": "Prześlij",
+      "failed": "Przesyłanie nie powiodło się"
+    },
+    "accessibility": {
+      "chatOpened": "Czat otwarty",
+      "chatClosed": "Czat zamknięty",
+      "chatButtonDisabled": "Przycisk czatu wyłączony",
+      "chatButtonEnabled": "Przycisk czatu włączony",
+      "chatButtonFocused": "Przycisk czatu w fokusie",
+      "fullscreen": "Czat jest teraz na pełnym ekranie",
+      "windowed": "Czat jest w oknie",
+      "scrollToBottom": "Przewiń na dół",
+      "closeChat": "zamknij czat",
+      "openChat": "otwórz czat"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "Asystent AI",
+      "liveAgent": "Agent na żywo",
+      "liveChatSupport": "Wsparcie czatu na żywo",
+      "online": "Online",
+      "offline": "Offline",
+      "connecting": "Łączenie",
+      "connected": "Połączono z agentem na żywo",
+      "disconnected": "Rozłączono z agentem na żywo",
+      "fullscreen": "Pełny Ekran",
+      "minimize": "Minimalizuj",
+      "close": "Zamknij czat"
+    },
+    "button": {
+      "open": "Otwórz czat",
+      "close": "Zamknij czat",
+      "chat": "Czat",
+      "cancel": "Anuluj",
+      "submit": "Wyślij",
+      "send": "Wyślij",
+      "sendMessage": "Wyślij wiadomość"
+    },
+    "input": {
+      "placeholder": "Napisz wiadomość...",
+      "typing": "pisze",
+      "send": "Wyślij",
+      "attachment": "Załącznik",
+      "emoji": "Emoji",
+      "moreOptions": "Więcej opcji",
+      "attachFiles": "Załącz pliki (lub przeciągnij i upuść)"
+    },
+    "messages": {
+      "agent": "Agent",
+      "aiAgent": "Agent AI",
+      "liveAgent": "Agent na żywo",
+      "typing": "Agent pisze",
+      "connecting": "Łączenie z czatem",
+      "connectionLost": "Utracono połączenie",
+      "socketConnected": "Socket połączony pomyślnie",
+      "newMessage": "Nowa wiadomość",
+      "unreadMessages": "nieprzeczytane wiadomości",
+      "processing": "Przetwarzanie plików...",
+      "processingMessage": "Przetwarzanie Twojej wiadomości...",
+      "pleaseWait": "Proszę czekać, przygotowujemy Twoje pliki",
+      "justNow": "Właśnie teraz"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "Witamy! Jak możemy Ci pomóc?",
+        "name": "Imię",
+        "email": "E-mail",
+        "phone": "Numer telefonu",
+        "question": "Pytanie",
+        "enterName": "Wprowadź swoje imię",
+        "enterEmail": "Wprowadź swój e-mail",
+        "enterPhone": "Wprowadź swój telefon",
+        "enterQuery": "Wprowadź tutaj swoje pytanie...",
+        "optional": "(opcjonalne)",
+        "required": "To pole jest wymagane.",
+        "sendMessage": "Wyślij wiadomość"
+      },
+      "postChatForm": {
+        "greeting": "Dziękujemy za opinię!",
+        "rating": "Ocena",
+        "feedback": "Opinia",
+        "enterFeedback": "Wprowadź tutaj swoją opinię...",
+        "submit": "Wyślij",
+        "optional": "(opcjonalne)",
+        "required": "Proszę podać ocenę."
+      },
+      "offlineChatForm": {
+        "greeting": "Przepraszamy, nie jesteśmy teraz online. Zostaw wiadomość, a skontaktujemy się z Tobą.",
+        "name": "Imię",
+        "email": "E-mail",
+        "phone": "Numer telefonu",
+        "question": "Pytanie",
+        "enterName": "Wprowadź swoje imię",
+        "enterEmail": "Wprowadź swój e-mail",
+        "enterPhone": "Wprowadź swój numer telefonu",
+        "enterQuery": "Wprowadź tutaj swoje pytanie...",
+        "sendMessage": "Wyślij wiadomość",
+        "optional": "(opcjonalne)",
+        "required": "To pole jest wymagane."
+      },
+      "badgeChatForm": {
+        "greeting": "Jak możemy Ci dzisiaj pomóc?",
+        "placeholder": "Napisz tutaj swoją wiadomość...",
+        "send": "Wyślij"
+      },
+      "userInfoForm": {
+        "title": "Informacje Użytkownika",
+        "name": "Imię",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "save": "Zapisz",
+        "cancel": "Anuluj"
+      }
+    },
+    "errors": {
+      "failed": "Niepowodzenie",
+      "error": "Błąd",
+      "validationError": "Błąd walidacji",
+      "fieldRequired": "To pole jest wymagane.",
+      "fillAllFields": "Wypełnij wszystkie wymagane pola przed wysłaniem.",
+      "connectionError": "Wystąpił błąd połączenia",
+      "uploadFailed": "Przesyłanie nie powiodło się",
+      "processingFailed": "Przetwarzanie nie powiodło się"
+    },
+    "file": {
+      "loading": "Ładowanie",
+      "cancel": "Anuluj przesyłanie",
+      "remove": "Usuń plik",
+      "upload": "Prześlij",
+      "failed": "Przesyłanie nie powiodło się",
+      "dropFilesHere": "Upuść pliki tutaj, aby przesłać"
+    },
+    "accessibility": {
+      "chatOpened": "Czat otwarty",
+      "chatClosed": "Czat zamknięty",
+      "chatButtonDisabled": "Przycisk czatu wyłączony",
+      "chatButtonEnabled": "Przycisk czatu włączony",
+      "chatButtonFocused": "Przycisk czatu w fokusie",
+      "fullscreen": "Czat jest teraz na pełnym ekranie",
+      "windowed": "Czat jest w oknie",
+      "scrollToBottom": "Przewiń na dół",
+      "closeChat": "zamknij czat",
+      "openChat": "otwórz czat",
+      "newMessages": "nowe wiadomości",
+      "unreadMessage": "nieprzeczytana wiadomość"
+    },
+    "status": {
+      "connecting": "Łączenie...",
+      "connected": "Połączono",
+      "disconnected": "Rozłączono",
+      "reconnecting": "Ponowne łączenie...",
+      "connectionLost": "Utracono połączenie"
+    },
+    "navigation": {
+      "scrollToBottom": "Przewiń na dół",
+      "newMessages": "nowe wiadomości",
+      "newMessage": "nowa wiadomość"
+    },
+    "branding": {
+      "poweredBy": "Napędzane przez Kogents"
+    }
+  }
+}

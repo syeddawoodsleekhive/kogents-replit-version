@@ -1,0 +1,270 @@
+{
+  "mainPage": {
+    "title": "Kogents Stijl Chat Widget",
+    "description": "Een aanpasbare chat widget die kan worden ingebed in elke website.",
+    "buttons": {
+      "viewDemo": "Demo Bekijken",
+      "documentation": "Documentatie"
+    },
+    "integration": {
+      "title": "Snelle Integratie",
+      "description": "Voeg dit script toe aan je website om de chat widget in te bedden:"
+    },
+    "debug": {
+      "currentLanguage": "Huidige Taal",
+      "direction": "Richting",
+      "rtl": "Van Rechts naar Links",
+      "browserLanguage": "Browser Taal"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "Typ een bericht...",
+      "submit": "Verzenden",
+      "typing": "aan het typen"
+    },
+    "button": {
+      "open": "Chat openen",
+      "close": "Chat sluiten",
+      "cancel": "Annuleren",
+      "submit": "Verzenden"
+    },
+    "header": {
+      "title": "Chat",
+      "online": "Online",
+      "offline": "Offline",
+      "connecting": "Verbinden",
+      "connected": "Verbonden met live agent",
+      "disconnected": "Verbinding verbroken met live agent",
+      "aiAssistant": "AI Assistent",
+      "liveAgent": "Live Agent",
+      "liveChatSupport": "Live Chat Ondersteuning"
+    },
+    "messages": {
+      "agent": "Agent",
+      "aiAgent": "AI Agent",
+      "liveAgent": "Live Agent",
+      "typing": "Agent is aan het typen",
+      "connecting": "Verbinden met chat",
+      "connectionLost": "Verbinding verloren",
+      "socketConnected": "Socket succesvol verbonden",
+      "newMessage": "Nieuw bericht",
+      "unreadMessages": "ongelezen berichten"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "Welkom! Hoe kunnen we je helpen?",
+        "name": "Naam",
+        "email": "E-mail",
+        "phone": "Telefoonnummer",
+        "question": "Vraag",
+        "enterName": "Voer je naam in",
+        "enterEmail": "Voer je e-mail in",
+        "enterPhone": "Voer je telefoon in",
+        "enterQuery": "Voer hier je vraag in...",
+        "optional": "(optioneel)",
+        "required": "Dit veld is verplicht.",
+        "sendMessage": "Bericht verzenden"
+      },
+      "postChatForm": {
+        "greeting": "Bedankt voor je feedback!",
+        "rating": "Beoordeling",
+        "feedback": "Feedback",
+        "enterFeedback": "Voer hier je feedback in...",
+        "submit": "Verzenden",
+        "optional": "(optioneel)",
+        "required": "Geef een beoordeling."
+      },
+      "offlineChatForm": {
+        "greeting": "Sorry, we zijn momenteel niet online. Laat een bericht achter en we nemen contact met je op.",
+        "name": "Naam",
+        "email": "E-mail",
+        "phone": "Telefoonnummer",
+        "question": "Vraag",
+        "enterName": "Voer je naam in",
+        "enterEmail": "Voer je e-mail in",
+        "enterPhone": "Voer je telefoonnummer in",
+        "enterQuery": "Voer hier je vraag in...",
+        "sendMessage": "Bericht verzenden",
+        "optional": "(optioneel)",
+        "required": "Dit veld is verplicht."
+      }
+    },
+    "errors": {
+      "failed": "Mislukt",
+      "error": "Fout",
+      "validationError": "Validatiefout",
+      "fieldRequired": "Dit veld is verplicht.",
+      "fillAllFields": "Vul alle verplichte velden in voordat je verzendt.",
+      "connectionError": "Verbindingsfout opgetreden",
+      "uploadFailed": "Upload mislukt",
+      "processingFailed": "Verwerking mislukt"
+    },
+    "file": {
+      "loading": "Laden",
+      "cancel": "Upload annuleren",
+      "remove": "Bestand verwijderen",
+      "upload": "Uploaden",
+      "failed": "Upload mislukt"
+    },
+    "accessibility": {
+      "chatOpened": "Chat geopend",
+      "chatClosed": "Chat gesloten",
+      "chatButtonDisabled": "Chat knop uitgeschakeld",
+      "chatButtonEnabled": "Chat knop ingeschakeld",
+      "chatButtonFocused": "Chat knop gefocust",
+      "fullscreen": "Chat is nu volledig scherm",
+      "windowed": "Chat is in venster",
+      "scrollToBottom": "Scroll naar beneden",
+      "closeChat": "chat sluiten",
+      "openChat": "chat openen"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "AI Assistent",
+      "liveAgent": "Live Agent",
+      "liveChatSupport": "Live Chat Ondersteuning",
+      "online": "Online",
+      "offline": "Offline",
+      "connecting": "Verbinden",
+      "connected": "Verbonden met live agent",
+      "disconnected": "Verbinding verbroken met live agent",
+      "fullscreen": "Volledig Scherm",
+      "minimize": "Minimaliseren",
+      "close": "Chat sluiten"
+    },
+    "button": {
+      "open": "Chat openen",
+      "close": "Chat sluiten",
+      "chat": "Chat",
+      "cancel": "Annuleren",
+      "submit": "Verzenden",
+      "send": "Verzenden",
+      "sendMessage": "Bericht verzenden"
+    },
+    "input": {
+      "placeholder": "Typ een bericht...",
+      "typing": "aan het typen",
+      "send": "Verzenden",
+      "attachment": "Bijlage",
+      "emoji": "Emoji",
+      "moreOptions": "Meer opties",
+      "attachFiles": "Bestanden bijvoegen (of slepen en neerzetten)"
+    },
+    "messages": {
+      "agent": "Agent",
+      "aiAgent": "AI Agent",
+      "liveAgent": "Live Agent",
+      "typing": "Agent is aan het typen",
+      "connecting": "Verbinden met chat",
+      "connectionLost": "Verbinding verloren",
+      "socketConnected": "Socket succesvol verbonden",
+      "newMessage": "Nieuw bericht",
+      "unreadMessages": "ongelezen berichten",
+      "processing": "Bestanden verwerken...",
+      "processingMessage": "Je bericht verwerken...",
+      "pleaseWait": "Even geduld terwijl we je bestanden voorbereiden",
+      "justNow": "Zojuist"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "Welkom! Hoe kunnen we je helpen?",
+        "name": "Naam",
+        "email": "E-mail",
+        "phone": "Telefoonnummer",
+        "question": "Vraag",
+        "enterName": "Voer je naam in",
+        "enterEmail": "Voer je e-mail in",
+        "enterPhone": "Voer je telefoon in",
+        "enterQuery": "Voer hier je vraag in...",
+        "optional": "(optioneel)",
+        "required": "Dit veld is verplicht.",
+        "sendMessage": "Bericht verzenden"
+      },
+      "postChatForm": {
+        "greeting": "Bedankt voor je feedback!",
+        "rating": "Beoordeling",
+        "feedback": "Feedback",
+        "enterFeedback": "Voer hier je feedback in...",
+        "submit": "Verzenden",
+        "optional": "(optioneel)",
+        "required": "Geef een beoordeling."
+      },
+      "offlineChatForm": {
+        "greeting": "Sorry, we zijn momenteel niet online. Laat een bericht achter en we nemen contact met je op.",
+        "name": "Naam",
+        "email": "E-mail",
+        "phone": "Telefoonnummer",
+        "question": "Vraag",
+        "enterName": "Voer je naam in",
+        "enterEmail": "Voer je e-mail in",
+        "enterPhone": "Voer je telefoonnummer in",
+        "enterQuery": "Voer hier je vraag in...",
+        "sendMessage": "Bericht verzenden",
+        "optional": "(optioneel)",
+        "required": "Dit veld is verplicht."
+      },
+      "badgeChatForm": {
+        "greeting": "Hoe kunnen we je vandaag helpen?",
+        "placeholder": "Typ hier je bericht...",
+        "send": "Verzenden"
+      },
+      "userInfoForm": {
+        "title": "Gebruikersinformatie",
+        "name": "Naam",
+        "email": "E-mail",
+        "phone": "Telefoon",
+        "save": "Opslaan",
+        "cancel": "Annuleren"
+      }
+    },
+    "errors": {
+      "failed": "Mislukt",
+      "error": "Fout",
+      "validationError": "Validatiefout",
+      "fieldRequired": "Dit veld is verplicht.",
+      "fillAllFields": "Vul alle verplichte velden in voordat je verzendt.",
+      "connectionError": "Verbindingsfout opgetreden",
+      "uploadFailed": "Upload mislukt",
+      "processingFailed": "Verwerking mislukt"
+    },
+    "file": {
+      "loading": "Laden",
+      "cancel": "Upload annuleren",
+      "remove": "Bestand verwijderen",
+      "upload": "Uploaden",
+      "failed": "Upload mislukt",
+      "dropFilesHere": "Zet bestanden hier neer om te uploaden"
+    },
+    "accessibility": {
+      "chatOpened": "Chat geopend",
+      "chatClosed": "Chat gesloten",
+      "chatButtonDisabled": "Chat knop uitgeschakeld",
+      "chatButtonEnabled": "Chat knop ingeschakeld",
+      "chatButtonFocused": "Chat knop gefocust",
+      "fullscreen": "Chat is nu volledig scherm",
+      "windowed": "Chat is in venster",
+      "scrollToBottom": "Scroll naar beneden",
+      "closeChat": "chat sluiten",
+      "openChat": "chat openen",
+      "newMessages": "nieuwe berichten",
+      "unreadMessage": "ongelezen bericht"
+    },
+    "status": {
+      "connecting": "Verbinden...",
+      "connected": "Verbonden",
+      "disconnected": "Verbinding verbroken",
+      "reconnecting": "Opnieuw verbinden...",
+      "connectionLost": "Verbinding verloren"
+    },
+    "navigation": {
+      "scrollToBottom": "Scroll naar beneden",
+      "newMessages": "nieuwe berichten",
+      "newMessage": "nieuw bericht"
+    },
+    "branding": {
+      "poweredBy": "Aangedreven door Kogents"
+    }
+  }
+}

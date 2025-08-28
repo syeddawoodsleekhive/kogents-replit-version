@@ -1,0 +1,58 @@
+export const dummyAgents = [
+  {
+    id: 1,
+    name: "John Smith",
+    email: "john.smith@company.com",
+    role: "Senior Agent",
+    online: true,
+  },
+  {
+    id: 2,
+    name: "Sarah Johnson",
+    email: "sarah.johnson@company.com",
+    role: "Team Lead",
+    online: true,
+  },
+  {
+    id: 3,
+    name: "Mike Davis",
+    email: "mike.davis@company.com",
+    role: "Support Agent",
+    online: true,
+  },
+  {
+    id: 4,
+    name: "Emily Wilson",
+    email: "emily.wilson@company.com",
+    role: "Customer Success",
+    online: true,
+  },
+  {
+    id: 5,
+    name: "David Brown",
+    email: "david.brown@company.com",
+    role: "Technical Support",
+    online: false,
+  },
+  {
+    id: 6,
+    name: "Lisa Garcia",
+    email: "lisa.garcia@company.com",
+    role: "Sales Agent",
+    online: false,
+  },
+  {
+    id: 7,
+    name: "Tom Anderson",
+    email: "tom.anderson@company.com",
+    role: "Support Agent",
+    online: false,
+  },
+  {
+    id: 8,
+    name: "Jessica Lee",
+    email: "jessica.lee@company.com",
+    role: "Customer Success",
+    online: false,
+  },
+];

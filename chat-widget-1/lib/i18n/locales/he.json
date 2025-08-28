@@ -1,0 +1,270 @@
+{
+  "mainPage": {
+    "title": "וידג'ט צ'אט בסגנון קוגנטס",
+    "description": "וידג'ט צ'אט מותאם אישית שניתן להטמיע בכל אתר אינטרנט.",
+    "buttons": {
+      "viewDemo": "צפה בדמו",
+      "documentation": "תיעוד"
+    },
+    "integration": {
+      "title": "אינטגרציה מהירה",
+      "description": "הוסף את הסקריפט הזה לאתר שלך כדי להטמיע את וידג'ט הצ'אט:"
+    },
+    "debug": {
+      "currentLanguage": "שפה נוכחית",
+      "direction": "כיוון",
+      "rtl": "מימין לשמאל",
+      "browserLanguage": "שפת הדפדפן"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "הקלד הודעה...",
+      "send": "שלח הודעה",
+      "submit": "שלח",
+      "typing": "מקליד"
+    },
+    "button": {
+      "open": "פתח צ'אט",
+      "close": "סגור צ'אט",
+      "send": "שלח",
+      "cancel": "ביטול",
+      "submit": "שלח"
+    },
+    "header": {
+      "title": "צ'אט",
+      "online": "מקוון",
+      "offline": "לא מקוון",
+      "connecting": "מתחבר",
+      "connected": "מחובר לנציג חי",
+      "disconnected": "מנותק מנציג חי",
+      "aiAssistant": "עוזר AI",
+      "liveAgent": "נציג חי",
+      "liveChatSupport": "תמיכת צ'אט חי"
+    },
+    "messages": {
+      "agent": "נציג",
+      "aiAgent": "נציג AI",
+      "liveAgent": "נציג חי",
+      "typing": "הנציג מקליד",
+      "connecting": "מתחבר לצ'אט",
+      "connectionLost": "החיבור אבד",
+      "socketConnected": "החיבור הצליח",
+      "newMessage": "הודעה חדשה",
+      "unreadMessages": "הודעות שלא נקראו"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "ברוכים הבאים! איך נוכל לעזור לכם?",
+        "name": "שם",
+        "email": "אימייל",
+        "phone": "מספר טלפון",
+        "question": "שאלה",
+        "enterName": "הזן את שמך",
+        "enterEmail": "הזן את האימייל שלך",
+        "enterPhone": "הזן את הטלפון שלך",
+        "enterQuery": "אנא הזן את השאלה שלך כאן...",
+        "optional": "(אופציונלי)",
+        "required": "שדה זה נדרש.",
+        "sendMessage": "שלח הודעה"
+      },
+      "postChatForm": {
+        "greeting": "תודה על המשוב שלכם!",
+        "rating": "דירוג",
+        "feedback": "משוב",
+        "enterFeedback": "אנא הזן את המשוב שלך כאן...",
+        "submit": "שלח",
+        "optional": "(אופציונלי)",
+        "required": "אנא ספק דירוג."
+      },
+      "offlineChatForm": {
+        "greeting": "מצטערים, אנחנו לא מקוונים כרגע. השאירו הודעה ונחזור אליכם.",
+        "name": "שם",
+        "email": "אימייל",
+        "phone": "מספר טלפון",
+        "question": "שאלה",
+        "enterName": "הזן את שמך",
+        "enterEmail": "הזן את האימייל שלך",
+        "enterPhone": "הזן את מספר הטלפון שלך",
+        "enterQuery": "אנא הזן את השאלה שלך כאן...",
+        "sendMessage": "שלח הודעה",
+        "optional": "(אופציונלי)",
+        "required": "שדה זה נדרש."
+      }
+    },
+    "errors": {
+      "failed": "נכשל",
+      "error": "שגיאה",
+      "validationError": "שגיאת אימות",
+      "fieldRequired": "שדה זה נדרש.",
+      "fillAllFields": "אנא מלא את כל השדות הנדרשים לפני השליחה.",
+      "connectionError": "אירעה שגיאת חיבור",
+      "uploadFailed": "ההעלאה נכשלה",
+      "processingFailed": "העיבוד נכשל"
+    },
+    "file": {
+      "loading": "טוען",
+      "cancel": "בטל העלאה",
+      "remove": "הסר קובץ",
+      "upload": "העלה",
+      "failed": "ההעלאה נכשלה"
+    },
+    "accessibility": {
+      "chatOpened": "הצ'אט נפתח",
+      "chatClosed": "הצ'אט נסגר",
+      "chatButtonDisabled": "כפתור הצ'אט מושבת",
+      "chatButtonEnabled": "כפתור הצ'אט מופעל",
+      "chatButtonFocused": "כפתור הצ'אט במיקוד",
+      "fullscreen": "הצ'אט כעת במסך מלא",
+      "windowed": "הצ'אט בחלון",
+      "scrollToBottom": "גלול לתחתית"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "עוזר AI",
+      "liveAgent": "נציג חי",
+      "liveChatSupport": "תמיכת צ'אט חי",
+      "online": "מקוון",
+      "offline": "לא מקוון",
+      "connecting": "מתחבר",
+      "connected": "מחובר לנציג חי",
+      "disconnected": "מנותק מנציג חי",
+      "fullscreen": "מסך מלא",
+      "minimize": "מזער",
+      "close": "סגור צ'אט"
+    },
+    "button": {
+      "open": "פתח צ'אט",
+      "close": "סגור צ'אט",
+      "chat": "צ'אט",
+      "cancel": "ביטול",
+      "submit": "שלח",
+      "send": "שלח",
+      "sendMessage": "שלח הודעה"
+    },
+    "input": {
+      "placeholder": "הקלד הודעה...",
+      "typing": "מקליד",
+      "send": "שלח",
+      "attachment": "צירוף",
+      "emoji": "אמוג'י",
+      "moreOptions": "אפשרויות נוספות",
+      "attachFiles": "צרף קבצים (או גרור ושחרר)"
+    },
+    "messages": {
+      "agent": "נציג",
+      "aiAgent": "נציג AI",
+      "liveAgent": "נציג חי",
+      "typing": "הנציג מקליד",
+      "connecting": "מתחבר לצ'אט",
+      "connectionLost": "החיבור אבד",
+      "socketConnected": "החיבור הצליח",
+      "newMessage": "הודעה חדשה",
+      "unreadMessages": "הודעות שלא נקראו",
+      "processing": "מעבד קבצים...",
+      "processingMessage": "מעבד את ההודעה שלך...",
+      "pleaseWait": "אנא המתן בזמן שאנו מכינים את הקבצים שלך",
+      "justNow": "עכשיו"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "ברוכים הבאים! איך נוכל לעזור לכם?",
+        "name": "שם",
+        "email": "אימייל",
+        "phone": "מספר טלפון",
+        "question": "שאלה",
+        "enterName": "הזן את שמך",
+        "enterEmail": "הזן את האימייל שלך",
+        "enterPhone": "הזן את הטלפון שלך",
+        "enterQuery": "אנא הזן את השאלה שלך כאן...",
+        "optional": "(אופציונלי)",
+        "required": "שדה זה נדרש.",
+        "sendMessage": "שלח הודעה"
+      },
+      "postChatForm": {
+        "greeting": "תודה על המשוב שלכם!",
+        "rating": "דירוג",
+        "feedback": "משוב",
+        "enterFeedback": "אנא הזן את המשוב שלך כאן...",
+        "submit": "שלח",
+        "optional": "(אופציונלי)",
+        "required": "אנא ספק דירוג."
+      },
+      "offlineChatForm": {
+        "greeting": "מצטערים, אנחנו לא מקוונים כרגע. השאירו הודעה ונחזור אליכם.",
+        "name": "שם",
+        "email": "אימייל",
+        "phone": "מספר טלפון",
+        "question": "שאלה",
+        "enterName": "הזן את שמך",
+        "enterEmail": "הזן את האימייל שלך",
+        "enterPhone": "הזן את מספר הטלפון שלך",
+        "enterQuery": "אנא הזן את השאלה שלך כאן...",
+        "sendMessage": "שלח הודעה",
+        "optional": "(אופציונלי)",
+        "required": "שדה זה נדרש."
+      },
+      "badgeChatForm": {
+        "greeting": "איך נוכל לעזור לכם היום?",
+        "placeholder": "הקלד את ההודעה שלך כאן...",
+        "send": "שלח"
+      },
+      "userInfoForm": {
+        "title": "מידע משתמש",
+        "name": "שם",
+        "email": "אימייל",
+        "phone": "טלפון",
+        "save": "שמור",
+        "cancel": "ביטול"
+      }
+    },
+    "errors": {
+      "failed": "נכשל",
+      "error": "שגיאה",
+      "validationError": "שגיאת אימות",
+      "fieldRequired": "שדה זה נדרש.",
+      "fillAllFields": "אנא מלא את כל השדות הנדרשים לפני השליחה.",
+      "connectionError": "אירעה שגיאת חיבור",
+      "uploadFailed": "ההעלאה נכשלה",
+      "processingFailed": "העיבוד נכשל"
+    },
+    "file": {
+      "loading": "טוען",
+      "cancel": "בטל העלאה",
+      "remove": "הסר קובץ",
+      "upload": "העלה",
+      "failed": "ההעלאה נכשלה",
+      "dropFilesHere": "גרור ושחרר קבצים כאן להעלאה"
+    },
+    "accessibility": {
+      "chatOpened": "הצ'אט נפתח",
+      "chatClosed": "הצ'אט נסגר",
+      "chatButtonDisabled": "כפתור הצ'אט מושבת",
+      "chatButtonEnabled": "כפתור הצ'אט מופעל",
+      "chatButtonFocused": "כפתור הצ'אט במיקוד",
+      "fullscreen": "הצ'אט כעת במסך מלא",
+      "windowed": "הצ'אט בחלון",
+      "scrollToBottom": "גלול לתחתית",
+      "closeChat": "סגור צ'אט",
+      "openChat": "פתח צ'אט",
+      "newMessages": "הודעות חדשות",
+      "unreadMessage": "הודעה שלא נקראה"
+    },
+    "status": {
+      "connecting": "מתחבר...",
+      "connected": "מחובר",
+      "disconnected": "מנותק",
+      "reconnecting": "מתחבר מחדש...",
+      "connectionLost": "החיבור אבד"
+    },
+    "navigation": {
+      "scrollToBottom": "גלול לתחתית",
+      "newMessages": "הודעות חדשות",
+      "newMessage": "הודעה חדשה"
+    },
+    "branding": {
+      "poweredBy": "מופעל על ידי קוגנטס"
+    }
+  }
+}

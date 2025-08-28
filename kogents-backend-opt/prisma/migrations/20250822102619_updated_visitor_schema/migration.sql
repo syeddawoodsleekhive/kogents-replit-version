@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Visitor" ADD COLUMN     "sessionCount" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "totalChats" INTEGER NOT NULL DEFAULT 0;

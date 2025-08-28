@@ -1,0 +1,167 @@
+{
+  "mainPage": {
+    "title": "चैट विजेट डेमो",
+    "description": "एक आधुनिक, प्रतिक्रियाशील चैट विजेट जो आपकी वेबसाइट में एकीकृत करने के लिए तैयार है।",
+    "buttons": {
+      "viewDemo": "डेमो देखें",
+      "documentation": "दस्तावेज़"
+    },
+    "integration": {
+      "title": "एकीकरण",
+      "description": "इस चैट विजेट को अपनी वेबसाइट में एकीकृत करें।"
+    },
+    "debug": {
+      "currentLanguage": "वर्तमान भाषा",
+      "direction": "दिशा",
+      "rtl": "RTL",
+      "browserLanguage": "ब्राउज़र भाषा"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "AI सहायक",
+      "liveAgent": "लाइव एजेंट",
+      "liveChatSupport": "लाइव चैट सपोर्ट",
+      "online": "ऑनलाइन",
+      "offline": "ऑफलाइन",
+      "connecting": "कनेक्ट हो रहा है",
+      "connected": "लाइव एजेंट से जुड़े",
+      "disconnected": "लाइव एजेंट से डिस्कनेक्ट",
+      "fullscreen": "फुलस्क्रीन",
+      "minimize": "छोटा करें",
+      "close": "चैट बंद करें"
+    },
+    "button": {
+      "open": "चैट खोलें",
+      "close": "चैट बंद करें",
+      "chat": "चैट",
+      "cancel": "रद्द करें",
+      "submit": "भेजें",
+      "send": "भेजें",
+      "sendMessage": "संदेश भेजें"
+    },
+    "input": {
+      "placeholder": "संदेश टाइप करें...",
+      "typing": "टाइप कर रहे हैं",
+      "send": "भेजें",
+      "attachment": "संलग्नक",
+      "emoji": "इमोजी",
+      "moreOptions": "अधिक विकल्प",
+      "attachFiles": "फाइलें संलग्न करें (या खींचें और छोड़ें)"
+    },
+    "messages": {
+      "agent": "एजेंट",
+      "aiAgent": "AI एजेंट",
+      "liveAgent": "लाइव एजेंट",
+      "typing": "एजेंट टाइप कर रहा है",
+      "connecting": "चैट से कनेक्ट हो रहा है",
+      "connectionLost": "कनेक्शन खो गया",
+      "socketConnected": "सॉकेट सफलतापूर्वक कनेक्ट हुआ",
+      "newMessage": "नया संदेश",
+      "unreadMessages": "अपठित संदेश",
+      "processing": "फाइल प्रोसेसिंग...",
+      "processingMessage": "आपके संदेश को प्रोसेस कर रहे हैं...",
+      "pleaseWait": "कृपया प्रतीक्षा करें, हम आपकी फाइल तैयार कर रहे हैं",
+      "justNow": "अभी-अभी"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "स्वागत है! हम आपकी कैसे मदद कर सकते हैं?",
+        "name": "नाम",
+        "email": "ईमेल",
+        "phone": "फोन नंबर",
+        "question": "प्रश्न",
+        "enterName": "अपना नाम दर्ज करें",
+        "enterEmail": "अपना ईमेल दर्ज करें",
+        "enterPhone": "अपना फोन नंबर दर्ज करें",
+        "enterQuery": "कृपया यहाँ अपना प्रश्न दर्ज करें...",
+        "optional": "(वैकल्पिक)",
+        "required": "यह फील्ड आवश्यक है।",
+        "sendMessage": "संदेश भेजें"
+      },
+      "postChatForm": {
+        "greeting": "आपकी प्रतिक्रिया के लिए धन्यवाद!",
+        "rating": "रेटिंग",
+        "feedback": "प्रतिक्रिया",
+        "enterFeedback": "कृपया यहाँ अपनी प्रतिक्रिया दर्ज करें...",
+        "submit": "भेजें",
+        "optional": "(वैकल्पिक)",
+        "required": "कृपया रेटिंग प्रदान करें।"
+      },
+      "offlineChatForm": {
+        "greeting": "खेद है, हम अभी ऑनलाइन नहीं हैं। कृपया संदेश छोड़ें और हम आपसे संपर्क करेंगे।",
+        "name": "नाम",
+        "email": "ईमेल",
+        "phone": "फोन नंबर",
+        "question": "प्रश्न",
+        "enterName": "अपना नाम दर्ज करें",
+        "enterEmail": "अपना ईमेल दर्ज करें",
+        "enterPhone": "अपना फोन नंबर दर्ज करें",
+        "enterQuery": "कृपया यहाँ अपना प्रश्न दर्ज करें...",
+        "sendMessage": "संदेश भेजें",
+        "optional": "(वैकल्पिक)",
+        "required": "यह फील्ड आवश्यक है।"
+      },
+      "badgeChatForm": {
+        "greeting": "आज हम आपकी कैसे मदद कर सकते हैं?",
+        "placeholder": "यहाँ अपना संदेश दर्ज करें...",
+        "send": "भेजें"
+      },
+      "userInfoForm": {
+        "title": "उपयोगकर्ता जानकारी",
+        "name": "नाम",
+        "email": "ईमेल",
+        "phone": "फोन",
+        "save": "सहेजें",
+        "cancel": "रद्द करें"
+      }
+    },
+    "errors": {
+      "failed": "असफल",
+      "error": "त्रुटि",
+      "validationError": "सत्यापन त्रुटि",
+      "fieldRequired": "यह फील्ड आवश्यक है।",
+      "fillAllFields": "भेजने से पहले सभी आवश्यक फील्ड भरें।",
+      "connectionError": "कनेक्शन त्रुटि हुई",
+      "uploadFailed": "अपलोड असफल",
+      "processingFailed": "प्रसंस्करण असफल"
+    },
+    "file": {
+      "loading": "लोड हो रहा है",
+      "cancel": "अपलोड रद्द करें",
+      "remove": "फाइल हटाएं",
+      "upload": "अपलोड",
+      "failed": "अपलोड असफल",
+      "dropFilesHere": "यहाँ फाइलें खींचें और छोड़ें"
+    },
+    "accessibility": {
+      "chatOpened": "चैट खुला",
+      "chatClosed": "चैट बंद",
+      "chatButtonDisabled": "चैट बटन अक्षम",
+      "chatButtonEnabled": "चैट बटन सक्षम",
+      "chatButtonFocused": "चैट बटन फोकस्ड",
+      "fullscreen": "चैट अब फुलस्क्रीन है",
+      "windowed": "चैट विंडो मोड में है",
+      "scrollToBottom": "नीचे स्क्रॉल करें",
+      "closeChat": "चैट बंद करें",
+      "openChat": "चैट खोलें",
+      "newMessages": "नए संदेश",
+      "unreadMessage": "अपठित संदेश"
+    },
+    "status": {
+      "connecting": "कनेक्ट हो रहा है...",
+      "connected": "कनेक्टेड",
+      "disconnected": "डिस्कनेक्टेड",
+      "reconnecting": "पुनः कनेक्ट हो रहा है...",
+      "connectionLost": "कनेक्शन खो गया"
+    },
+    "navigation": {
+      "scrollToBottom": "नीचे स्क्रॉल करें",
+      "newMessages": "नए संदेश",
+      "newMessage": "नया संदेश"
+    },
+    "branding": {
+      "poweredBy": "Kogents द्वारा संचालित"
+    }
+  }
+}

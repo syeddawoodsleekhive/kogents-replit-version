@@ -1,0 +1,272 @@
+{
+  "mainPage": {
+    "title": "کوگینٹس سٹائل چیٹ ویجٹ",
+    "description": "ایک قابل تخصیص چیٹ ویجٹ جو کسی بھی ویب سائٹ پر سرایت کیا جا سکتا ہے۔",
+    "buttons": {
+      "viewDemo": "ڈیمو دیکھیں",
+      "documentation": "دستاویزات"
+    },
+    "integration": {
+      "title": "تیز انضمام",
+      "description": "چیٹ ویجٹ کو سرایت کرنے کے لیے اس اسکرپٹ کو اپنی ویب سائٹ میں شامل کریں:"
+    },
+    "debug": {
+      "currentLanguage": "موجودہ زبان",
+      "direction": "سمت",
+      "rtl": "دائیں سے بائیں",
+      "browserLanguage": "براؤزر کی زبان"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "پیغام ٹائپ کریں...",
+      "send": "پیغام بھیجیں",
+      "submit": "بھیجیں",
+      "typing": "ٹائپ کر رہے ہیں"
+    },
+    "button": {
+      "open": "چیٹ کھولیں",
+      "close": "چیٹ بند کریں",
+      "send": "بھیجیں",
+      "cancel": "منسوخ کریں",
+      "submit": "بھیجیں"
+    },
+    "header": {
+      "title": "چیٹ",
+      "online": "آن لائن",
+      "offline": "آف لائن",
+      "connecting": "جڑ رہا ہے",
+      "connected": "لائیو ایجنٹ سے جڑے",
+      "disconnected": "لائیو ایجنٹ سے منقطع",
+      "aiAssistant": "AI اسسٹنٹ",
+      "liveAgent": "لائیو ایجنٹ",
+      "liveChatSupport": "لائیو چیٹ سپورٹ"
+    },
+    "messages": {
+      "agent": "ایجنٹ",
+      "aiAgent": "AI ایجنٹ",
+      "liveAgent": "لائیو ایجنٹ",
+      "typing": "ایجنٹ ٹائپ کر رہا ہے",
+      "connecting": "چیٹ سے جڑ رہا ہے",
+      "connectionLost": "کنکشن ٹوٹ گیا",
+      "socketConnected": "ساکٹ کامیابی سے جڑ گیا",
+      "newMessage": "نیا پیغام",
+      "unreadMessages": "غیر پڑھے پیغامات"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "خوش آمدید! ہم آپ کی کیسے مدد کر سکتے ہیں؟",
+        "name": "نام",
+        "email": "ای میل",
+        "phone": "فون نمبر",
+        "question": "سوال",
+        "enterName": "اپنا نام درج کریں",
+        "enterEmail": "اپنا ای میل درج کریں",
+        "enterPhone": "اپنا فون درج کریں",
+        "enterQuery": "براہ کرم یہاں اپنا سوال درج کریں...",
+        "optional": "(اختیاری)",
+        "required": "یہ فیلڈ ضروری ہے۔",
+        "sendMessage": "پیغام بھیجیں"
+      },
+      "postChatForm": {
+        "greeting": "آپ کے فیڈبیک کا شکریہ!",
+        "rating": "ریٹنگ",
+        "feedback": "فیڈبیک",
+        "enterFeedback": "براہ کرم یہاں اپنا فیڈبیک درج کریں...",
+        "submit": "بھیجیں",
+        "optional": "(اختیاری)",
+        "required": "براہ کرم ریٹنگ فراہم کریں۔"
+      },
+      "offlineChatForm": {
+        "greeting": "معذرت، ہم فی الوقت آن لائن نہیں ہیں۔ پیغام چھوڑیں اور ہم آپ سے رابطہ کریں گے۔",
+        "name": "نام",
+        "email": "ای میل",
+        "phone": "فون نمبر",
+        "question": "سوال",
+        "enterName": "اپنا نام درج کریں",
+        "enterEmail": "اپنا ای میل درج کریں",
+        "enterPhone": "اپنا فون نمبر درج کریں",
+        "enterQuery": "براہ کرم یہاں اپنا سوال درج کریں...",
+        "sendMessage": "پیغام بھیجیں",
+        "optional": "(اختیاری)",
+        "required": "یہ فیلڈ ضروری ہے۔"
+      }
+    },
+    "errors": {
+      "failed": "ناکام",
+      "error": "خرابی",
+      "validationError": "توثیق کی خرابی",
+      "fieldRequired": "یہ فیلڈ ضروری ہے۔",
+      "fillAllFields": "بھیجنے سے پہلے تمام ضروری فیلڈز بھریں۔",
+      "connectionError": "کنکشن کی خرابی ہوئی",
+      "uploadFailed": "اپ لوڈ ناکام",
+      "processingFailed": "پروسیسنگ ناکام"
+    },
+    "file": {
+      "loading": "لوڈ ہو رہا ہے",
+      "cancel": "اپ لوڈ منسوخ کریں",
+      "remove": "فائل ہٹائیں",
+      "upload": "اپ لوڈ",
+      "failed": "اپ لوڈ ناکام"
+    },
+    "accessibility": {
+      "chatOpened": "چیٹ کھلا",
+      "chatClosed": "چیٹ بند",
+      "chatButtonDisabled": "چیٹ بٹن غیر فعال",
+      "chatButtonEnabled": "چیٹ بٹن فعال",
+      "chatButtonFocused": "چیٹ بٹن فوکسڈ",
+      "fullscreen": "چیٹ اب فل اسکرین ہے",
+      "windowed": "چیٹ ونڈو میں ہے",
+      "scrollToBottom": "نیچے اسکرول کریں",
+      "closeChat": "چیٹ بند کریں",
+      "openChat": "چیٹ کھولیں"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "AI اسسٹنٹ",
+      "liveAgent": "لائیو ایجنٹ",
+      "liveChatSupport": "لائیو چیٹ سپورٹ",
+      "online": "آن لائن",
+      "offline": "آف لائن",
+      "connecting": "جڑ رہا ہے",
+      "connected": "لائیو ایجنٹ سے جڑے",
+      "disconnected": "لائیو ایجنٹ سے منقطع",
+      "fullscreen": "فل اسکرین",
+      "minimize": "چھوٹا کریں",
+      "close": "چیٹ بند کریں"
+    },
+    "button": {
+      "open": "چیٹ کھولیں",
+      "close": "چیٹ بند کریں",
+      "chat": "چیٹ",
+      "cancel": "منسوخ کریں",
+      "submit": "بھیجیں",
+      "send": "بھیجیں",
+      "sendMessage": "پیغام بھیجیں"
+    },
+    "input": {
+      "placeholder": "پیغام ٹائپ کریں...",
+      "typing": "ٹائپ کر رہے ہیں",
+      "send": "بھیجیں",
+      "attachment": "منسلکہ",
+      "emoji": "ایموجی",
+      "moreOptions": "مزید اختیارات",
+      "attachFiles": "فائلیں منسلک کریں (یا کھینچیں اور چھوڑیں)"
+    },
+    "messages": {
+      "agent": "ایجنٹ",
+      "aiAgent": "AI ایجنٹ",
+      "liveAgent": "لائیو ایجنٹ",
+      "typing": "ایجنٹ ٹائپ کر رہا ہے",
+      "connecting": "چیٹ سے جڑ رہا ہے",
+      "connectionLost": "کنکشن ٹوٹ گیا",
+      "socketConnected": "ساکٹ کامیابی سے جڑ گیا",
+      "newMessage": "نیا پیغام",
+      "unreadMessages": "غیر پڑھے پیغامات",
+      "processing": "فائلیں پروسیس ہو رہی ہیں...",
+      "processingMessage": "آپ کا پیغام پروسیس ہو رہا ہے...",
+      "pleaseWait": "براہ کرم انتظار کریں جب تک ہم آپ کی فائلیں تیار کر رہے ہیں",
+      "justNow": "ابھی"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "خوش آمدید! ہم آپ کی کیسے مدد کر سکتے ہیں؟",
+        "name": "نام",
+        "email": "ای میل",
+        "phone": "فون نمبر",
+        "question": "سوال",
+        "enterName": "اپنا نام درج کریں",
+        "enterEmail": "اپنا ای میل درج کریں",
+        "enterPhone": "اپنا فون درج کریں",
+        "enterQuery": "براہ کرم یہاں اپنا سوال درج کریں...",
+        "optional": "(اختیاری)",
+        "required": "یہ فیلڈ ضروری ہے۔",
+        "sendMessage": "پیغام بھیجیں"
+      },
+      "postChatForm": {
+        "greeting": "آپ کے فیڈبیک کا شکریہ!",
+        "rating": "ریٹنگ",
+        "feedback": "فیڈبیک",
+        "enterFeedback": "براہ کرم یہاں اپنا فیڈبیک درج کریں...",
+        "submit": "بھیجیں",
+        "optional": "(اختیاری)",
+        "required": "براہ کرم ریٹنگ فراہم کریں۔"
+      },
+      "offlineChatForm": {
+        "greeting": "معذرت، ہم فی الوقت آن لائن نہیں ہیں۔ پیغام چھوڑیں اور ہم آپ سے رابطہ کریں گے۔",
+        "name": "نام",
+        "email": "ای میل",
+        "phone": "فون نمبر",
+        "question": "سوال",
+        "enterName": "اپنا نام درج کریں",
+        "enterEmail": "اپنا ای میل درج کریں",
+        "enterPhone": "اپنا فون نمبر درج کریں",
+        "enterQuery": "براہ کرم یہاں اپنا سوال درج کریں...",
+        "sendMessage": "پیغام بھیجیں",
+        "optional": "(اختیاری)",
+        "required": "یہ فیلڈ ضروری ہے۔"
+      },
+      "badgeChatForm": {
+        "greeting": "ہم آج آپ کی کیسے مدد کر سکتے ہیں؟",
+        "placeholder": "یہاں اپنا پیغام ٹائپ کریں...",
+        "send": "بھیجیں"
+      },
+      "userInfoForm": {
+        "title": "صارف کی معلومات",
+        "name": "نام",
+        "email": "ای میل",
+        "phone": "فون",
+        "save": "محفوظ کریں",
+        "cancel": "منسوخ کریں"
+      }
+    },
+    "errors": {
+      "failed": "ناکام",
+      "error": "خرابی",
+      "validationError": "توثیق کی خرابی",
+      "fieldRequired": "یہ فیلڈ ضروری ہے۔",
+      "fillAllFields": "بھیجنے سے پہلے تمام ضروری فیلڈز بھریں۔",
+      "connectionError": "کنکشن کی خرابی ہوئی",
+      "uploadFailed": "اپ لوڈ ناکام",
+      "processingFailed": "پروسیسنگ ناکام"
+    },
+    "file": {
+      "loading": "لوڈ ہو رہا ہے",
+      "cancel": "اپ لوڈ منسوخ کریں",
+      "remove": "فائل ہٹائیں",
+      "upload": "اپ لوڈ",
+      "failed": "اپ لوڈ ناکام",
+      "dropFilesHere": "فائلیں یہاں کھینچیں اور چھوڑیں اپ لوڈ کے لیے"
+    },
+    "accessibility": {
+      "chatOpened": "چیٹ کھلا",
+      "chatClosed": "چیٹ بند",
+      "chatButtonDisabled": "چیٹ بٹن غیر فعال",
+      "chatButtonEnabled": "چیٹ بٹن فعال",
+      "chatButtonFocused": "چیٹ بٹن فوکسڈ",
+      "fullscreen": "چیٹ اب فل اسکرین ہے",
+      "windowed": "چیٹ ونڈو میں ہے",
+      "scrollToBottom": "نیچے اسکرول کریں",
+      "closeChat": "چیٹ بند کریں",
+      "openChat": "چیٹ کھولیں",
+      "newMessages": "نئے پیغامات",
+      "unreadMessage": "غیر پڑھا پیغام"
+    },
+    "status": {
+      "connecting": "جڑ رہا ہے...",
+      "connected": "جڑا ہوا",
+      "disconnected": "منقطع",
+      "reconnecting": "دوبارہ جڑ رہا ہے...",
+      "connectionLost": "کنکشن ٹوٹ گیا"
+    },
+    "navigation": {
+      "scrollToBottom": "نیچے اسکرول کریں",
+      "newMessages": "نئے پیغامات",
+      "newMessage": "نیا پیغام"
+    },
+    "branding": {
+      "poweredBy": "کوگینٹس کی طرف سے طاقت"
+    }
+  }
+}

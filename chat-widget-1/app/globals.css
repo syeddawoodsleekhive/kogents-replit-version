@@ -1,0 +1,749 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --widget-primary-color: #3b82f6;
+  --radius: 8px;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Basic RTL Support - Only text direction, no layout flipping */
+html[dir="rtl"],
+html.rtl {
+  direction: rtl;
+}
+
+/* RTL text alignment for specific elements */
+[dir="rtl"] .text-center,
+.rtl .text-center {
+  text-align: center; /* Keep center alignment for titles */
+}
+
+[dir="rtl"] .text-left,
+.rtl .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right,
+.rtl .text-right {
+  text-align: left;
+}
+
+/* RTL support for input fields and textareas */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+.rtl input,
+.rtl textarea {
+  text-align: right;
+}
+
+/* RTL support for chat messages - only text alignment */
+[dir="rtl"] .message-item,
+.rtl .message-item {
+  text-align: right;
+}
+
+[dir="rtl"] .message-item.user,
+.rtl .message-item.user {
+  text-align: left; /* User messages stay left-aligned */
+}
+
+/* RTL support for buttons - only text alignment */
+[dir="rtl"] button,
+.rtl button {
+  text-align: center; /* Keep buttons centered */
+}
+
+/* RTL support for links - only text alignment */
+[dir="rtl"] a,
+.rtl a {
+  text-align: inherit; /* Inherit parent alignment */
+}
+
+/* RTL support for paragraphs and text content */
+[dir="rtl"] p,
+.rtl p {
+  text-align: right;
+}
+
+/* RTL support for headings - keep them centered */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+.rtl h1,
+.rtl h2,
+.rtl h3,
+.rtl h4,
+.rtl h5,
+.rtl h6 {
+  text-align: center;
+}
+
+/* RTL support for code blocks - keep them left-aligned for readability */
+[dir="rtl"] pre,
+[dir="rtl"] code,
+.rtl pre,
+.rtl code {
+  text-align: left;
+  direction: ltr; /* Code should always be LTR for readability */
+}
+
+/* ===== CHAT WIDGET RTL STYLING ===== */
+
+/* Chat Widget Container RTL */
+[dir="rtl"] .chat-widget-container,
+.rtl .chat-widget-container {
+  direction: rtl;
+}
+
+/* Chat Button RTL Positioning */
+[dir="rtl"] .chat-button,
+.rtl .chat-button {
+  /* Keep button position but adjust internal layout */
+}
+
+/* Chat Window RTL Layout */
+[dir="rtl"] .chat-window,
+.rtl .chat-window {
+  direction: rtl;
+}
+
+/* Chat Header RTL */
+[dir="rtl"] .chat-header,
+.rtl .chat-header {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-header .flex,
+.rtl .chat-header .flex {
+  /* flex-direction: row-reverse; */
+}
+
+[dir="rtl"] .chat-header .ml-auto,
+.rtl .chat-header .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .chat-header .mr-2\.5,
+.rtl .chat-header .mr-2\.5 {
+  margin-right: 0;
+  margin-left: 0.625rem;
+}
+
+/* Message List RTL */
+[dir="rtl"] .chat-widget-message-list,
+.rtl .chat-widget-message-list {
+  direction: rtl;
+}
+
+/* Message Item RTL Layout */
+[dir="rtl"] .message-item,
+.rtl .message-item {
+  direction: rtl;
+}
+
+/* Agent messages - keep left alignment but reverse internal layout */
+[dir="rtl"] .message-item .justify-start,
+.rtl .message-item .justify-start {
+  justify-content: flex-start; /* Keep left alignment */
+}
+
+/* User messages - keep right alignment but reverse internal layout */
+[dir="rtl"] .message-item .justify-end,
+.rtl .message-item .justify-end {
+  justify-content: flex-end; /* Keep right alignment */
+}
+
+/* System messages - keep center alignment */
+[dir="rtl"] .message-item .justify-center,
+.rtl .message-item .justify-center {
+  justify-content: center;
+}
+
+/* Message content RTL */
+[dir="rtl"] .message-item .max-w-\[80\%\],
+.rtl .message-item .max-w-\[80\%\] {
+  direction: rtl;
+}
+
+/* Message timestamp RTL */
+[dir="rtl"] .message-item .justify-end,
+.rtl .message-item .justify-end {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .message-item .mr-\[-0\.125rem\],
+.rtl .message-item .mr-\[-0\.125rem\] {
+  margin-right: 0;
+  margin-left: -0.125rem;
+}
+
+/* Chat Input RTL */
+[dir="rtl"] .chat-input-container,
+.rtl .chat-input-container {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-input-container .flex,
+.rtl .chat-input-container .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .chat-input-container .ml-2,
+.rtl .chat-input-container .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .chat-input-container .mr-2,
+.rtl .chat-input-container .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* Typing Indicator RTL */
+[dir="rtl"] .typing-indicator,
+.rtl .typing-indicator {
+  direction: rtl;
+}
+
+[dir="rtl"] .typing-indicator .justify-start,
+.rtl .typing-indicator .justify-start {
+  justify-content: flex-start;
+}
+
+/* Scroll to bottom button RTL */
+[dir="rtl"] .scroll-to-bottom-button,
+.rtl .scroll-to-bottom-button {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* Form elements RTL */
+[dir="rtl"] .chat-form,
+.rtl .chat-form {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-form .flex,
+.rtl .chat-form .flex {
+  flex-direction: column;
+}
+
+[dir="rtl"] .chat-form .text-left,
+.rtl .chat-form .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .chat-form .text-right,
+.rtl .chat-form .text-right {
+  text-align: left;
+}
+
+/* Badge chat form RTL */
+[dir="rtl"] .badge-chat-form,
+.rtl .badge-chat-form {
+  direction: rtl;
+}
+
+/* Pre-chat form RTL */
+[dir="rtl"] .pre-chat-form,
+.rtl .pre-chat-form {
+  direction: rtl;
+}
+
+/* Post-chat form RTL */
+[dir="rtl"] .post-chat-form,
+.rtl .post-chat-form {
+  direction: rtl;
+}
+
+/* User info form RTL */
+[dir="rtl"] .user-info-form,
+.rtl .user-info-form {
+  direction: rtl;
+}
+
+/* Offline chat form RTL */
+[dir="rtl"] .offline-chat-form,
+.rtl .offline-chat-form {
+  direction: rtl;
+}
+
+/* File attachment RTL */
+[dir="rtl"] .file-attachment,
+.rtl .file-attachment {
+  direction: rtl;
+}
+
+/* Image preview RTL */
+[dir="rtl"] .image-preview,
+.rtl .image-preview {
+  direction: rtl;
+}
+
+/* Emoji picker RTL */
+[dir="rtl"] .emoji-picker,
+.rtl .emoji-picker {
+  direction: rtl;
+}
+
+/* More options RTL */
+[dir="rtl"] .more-options,
+.rtl .more-options {
+  direction: rtl;
+}
+
+/* Read receipt RTL */
+[dir="rtl"] .read-receipt,
+.rtl .read-receipt {
+  direction: rtl;
+}
+
+/* Compliance indicator RTL */
+[dir="rtl"] .compliance-indicator,
+.rtl .compliance-indicator {
+  direction: rtl;
+}
+
+/* Language selector RTL */
+[dir="rtl"] .language-selector,
+.rtl .language-selector {
+  direction: rtl;
+}
+
+/* Theme provider RTL */
+[dir="rtl"] .theme-provider,
+.rtl .theme-provider {
+  direction: rtl;
+}
+
+/* Translation provider RTL */
+[dir="rtl"] .translation-provider,
+.rtl .translation-provider {
+  direction: rtl;
+}
+
+/* Loading RTL */
+[dir="rtl"] .loading,
+.rtl .loading {
+  direction: rtl;
+}
+
+/* Security dashboard RTL */
+[dir="rtl"] .security-dashboard,
+.rtl .security-dashboard {
+  direction: rtl;
+}
+
+/* Fallback thumbnail RTL */
+[dir="rtl"] .fallback-thumbnail,
+.rtl .fallback-thumbnail {
+  direction: rtl;
+}
+
+/* Video preview RTL */
+[dir="rtl"] .video-preview,
+.rtl .video-preview {
+  direction: rtl;
+}
+
+/* Language detector RTL */
+[dir="rtl"] .language-detector,
+.rtl .language-detector {
+  direction: rtl;
+}
+
+/* Attachment button RTL */
+[dir="rtl"] .attachment-button,
+.rtl .attachment-button {
+  direction: rtl;
+}
+
+/* Chat button capsule RTL */
+[dir="rtl"] .chat-button-capsule,
+.rtl .chat-button-capsule {
+  direction: rtl;
+}
+
+/* Specific RTL adjustments for chat components */
+[dir="rtl"] .chat-widget-embedded,
+.rtl .chat-widget-embedded {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-widget-embedded .fixed,
+.rtl .chat-widget-embedded .fixed {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-widget-embedded .items-end,
+.rtl .chat-widget-embedded .items-end {
+  align-items: flex-end;
+}
+
+/* RTL for floating elements */
+[dir="rtl"] .absolute.left-1\/2,
+.rtl .absolute.left-1\/2 {
+  left: auto;
+  right: 50%;
+}
+
+[dir="rtl"] .transform.-translate-x-1\/2,
+.rtl .transform.-translate-x-1\/2 {
+  transform: translateX(50%);
+}
+
+/* RTL for specific positioning classes */
+[dir="rtl"] .bottom-6,
+.rtl .bottom-6 {
+  bottom: 1.5rem;
+}
+
+[dir="rtl"] .right-6,
+.rtl .right-6 {
+  right: 1.5rem;
+}
+
+[dir="rtl"] .left-4,
+.rtl .left-4 {
+  left: 1rem;
+}
+
+[dir="rtl"] .top-4,
+.rtl .top-4 {
+  top: 1rem;
+}
+
+/* RTL for z-index and positioning */
+[dir="rtl"] .z-50,
+.rtl .z-50 {
+  z-index: 50;
+}
+
+[dir="rtl"] .z-\[9999\],
+.rtl .z-\[9999\] {
+  z-index: 9999;
+}
+
+/* RTL for specific chat widget states */
+[dir="rtl"] .chat-widget-container[data-rtl="true"],
+.rtl .chat-widget-container[data-rtl="true"] {
+  direction: rtl;
+}
+
+/* RTL for chat widget animations */
+[dir="rtl"] .chat-widget-container .animate-in,
+.rtl .chat-widget-container .animate-in {
+  direction: rtl;
+}
+
+/* RTL for chat widget transitions */
+[dir="rtl"] .chat-widget-container .transition-all,
+.rtl .chat-widget-container .transition-all {
+  direction: rtl;
+}
+
+/* RTL for chat widget shadows and borders */
+[dir="rtl"] .chat-widget-container .shadow-lg,
+.rtl .chat-widget-container .shadow-lg {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-widget-container .rounded-lg,
+.rtl .chat-widget-container .rounded-lg {
+  direction: rtl;
+}
+
+/* RTL for chat widget background colors */
+[dir="rtl"] .chat-widget-container .bg-white,
+.rtl .chat-widget-container .bg-white {
+  direction: rtl;
+}
+
+/* RTL for chat widget text colors */
+[dir="rtl"] .chat-widget-container .text-gray-700,
+.rtl .chat-widget-container .text-gray-700 {
+  direction: rtl;
+}
+
+/* RTL for chat widget spacing */
+[dir="rtl"] .chat-widget-container .p-4,
+.rtl .chat-widget-container .p-4 {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-widget-container .space-y-4,
+.rtl .chat-widget-container .space-y-4 {
+  direction: rtl;
+}
+
+/* RTL for chat widget overflow */
+[dir="rtl"] .chat-widget-container .overflow-y-auto,
+.rtl .chat-widget-container .overflow-y-auto {
+  direction: rtl;
+}
+
+/* RTL for chat widget flexbox */
+[dir="rtl"] .chat-widget-container .flex,
+.rtl .chat-widget-container .flex {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-widget-container .flex-col,
+.rtl .chat-widget-container .flex-col {
+  flex-direction: column;
+}
+
+[dir="rtl"] .chat-widget-container .flex-1,
+.rtl .chat-widget-container .flex-1 {
+  flex: 1;
+}
+
+/* RTL for chat widget relative positioning */
+[dir="rtl"] .chat-widget-container .relative,
+.rtl .chat-widget-container .relative {
+  direction: rtl;
+}
+
+/* RTL for chat widget aria labels */
+[dir="rtl"] .chat-widget-container [aria-label],
+.rtl .chat-widget-container [aria-label] {
+  direction: rtl;
+}
+
+/* RTL for chat widget role attributes */
+[dir="rtl"] .chat-widget-container [role],
+.rtl .chat-widget-container [role] {
+  direction: rtl;
+}
+
+/* RTL for chat widget live regions */
+[dir="rtl"] .chat-widget-container [aria-live],
+.rtl .chat-widget-container [aria-live] {
+  direction: rtl;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* > .focus-visible\:outline-none:focus-visible,
+:focus-visible {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Hide scrollbar initially */
+.chat-widget-message-list::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+}
+
+.chat-widget-message-list::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+/* On hover: show scrollbar */
+.chat-widget-message-list:hover::-webkit-scrollbar-thumb {
+  background-color: #8b8b8b;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Full-screen image preview modal */
+.image-preview-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+  overflow: hidden !important;
+}
+
+/* Video slider styles */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-track {
+  background: #4b5563;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #3b82f6;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-track {
+  background: #4b5563;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.slider::-moz-range-thumb {
+  background: #3b82f6;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* Added RTL support and i18n optimizations */
+/* RTL Language Support */
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] .chat-widget-message-list {
+  direction: rtl;
+}
+
+html[dir="rtl"] .chat-button {
+  left: 1.5rem;
+  right: auto;
+}
+
+html[dir="rtl"] .chat-header {
+  direction: rtl;
+}
+
+html[dir="rtl"] .flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* RTL Text Alignment */
+html[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* RTL Margin and Padding Adjustments */
+html[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+html[dir="rtl"] .pl-4 {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+html[dir="rtl"] .pr-4 {
+  padding-right: 0;
+  padding-left: 1rem;
+}
+
+/* Performance Optimizations for Translation Loading */
+.i18n-loading {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.i18n-loaded {
+  opacity: 1;
+}
+
+/* Prevent layout shift during translation loading */
+.translation-placeholder {
+  min-height: 1.25rem;
+  background: transparent;
+}
+
+/* Optimize font loading for different languages */
+@font-face {
+  font-family: "Noto Sans Arabic";
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600&display=swap");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans CJK";
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&display=swap");
+  font-display: swap;
+}
+
+/* Language-specific font stacks */
+html[lang="ar"] {
+  font-family: "Noto Sans Arabic", Arial, sans-serif;
+}
+
+html[lang="zh"] {
+  font-family: "Noto Sans CJK", Arial, sans-serif;
+}
+
+html[lang="ja"] {
+  font-family: "Noto Sans CJK", Arial, sans-serif;
+}
+
+html[lang="ko"] {
+  font-family: "Noto Sans CJK", Arial, sans-serif;
+}
+
+/* Accessibility improvements for screen readers */
+.sr-only-i18n {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .i18n-loading,
+  .i18n-loaded {
+    transition: none;
+  }
+}

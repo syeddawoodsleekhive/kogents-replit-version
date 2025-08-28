@@ -1,0 +1,272 @@
+{
+  "mainPage": {
+    "title": "Виджет чата в стиле Kogents",
+    "description": "Настраиваемый виджет чата, который можно встроить на любой веб-сайт.",
+    "buttons": {
+      "viewDemo": "Посмотреть Демо",
+      "documentation": "Документация"
+    },
+    "integration": {
+      "title": "Быстрая Интеграция",
+      "description": "Добавьте этот скрипт на ваш сайт, чтобы встроить виджет чата:"
+    },
+    "debug": {
+      "currentLanguage": "Текущий Язык",
+      "direction": "Направление",
+      "rtl": "Справа налево",
+      "browserLanguage": "Язык Браузера"
+    }
+  },
+  "chat": {
+    "input": {
+      "placeholder": "Введите сообщение...",
+      "send": "Отправить сообщение",
+      "submit": "Отправить",
+      "typing": "печатает"
+    },
+    "button": {
+      "open": "Открыть чат",
+      "close": "Закрыть чат",
+      "send": "Отправить",
+      "cancel": "Отмена",
+      "submit": "Отправить"
+    },
+    "header": {
+      "title": "Чат",
+      "online": "Онлайн",
+      "offline": "Оффлайн",
+      "connecting": "Подключение",
+      "connected": "Подключен к живому агенту",
+      "disconnected": "Отключен от живого агента",
+      "aiAssistant": "ИИ Ассистент",
+      "liveAgent": "Живой агент",
+      "liveChatSupport": "Поддержка живого чата"
+    },
+    "messages": {
+      "agent": "Агент",
+      "aiAgent": "ИИ Агент",
+      "liveAgent": "Живой агент",
+      "typing": "Агент печатает",
+      "connecting": "Подключение к чату",
+      "connectionLost": "Соединение потеряно",
+      "socketConnected": "Сокет успешно подключен",
+      "newMessage": "Новое сообщение",
+      "unreadMessages": "непрочитанных сообщений"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "Добро пожаловать! Как мы можем вам помочь?",
+        "name": "Имя",
+        "email": "Электронная почта",
+        "phone": "Номер телефона",
+        "question": "Вопрос",
+        "enterName": "Введите ваше имя",
+        "enterEmail": "Введите вашу почту",
+        "enterPhone": "Введите ваш телефон",
+        "enterQuery": "Введите ваш вопрос здесь...",
+        "optional": "(необязательно)",
+        "required": "Это поле обязательно.",
+        "sendMessage": "Отправить сообщение"
+      },
+      "postChatForm": {
+        "greeting": "Спасибо за ваш отзыв!",
+        "rating": "Оценка",
+        "feedback": "Отзыв",
+        "enterFeedback": "Введите ваш отзыв здесь...",
+        "submit": "Отправить",
+        "optional": "(необязательно)",
+        "required": "Пожалуйста, поставьте оценку."
+      },
+      "offlineChatForm": {
+        "greeting": "Извините, мы сейчас не в сети. Оставьте сообщение, и мы свяжемся с вами.",
+        "name": "Имя",
+        "email": "Электронная почта",
+        "phone": "Номер телефона",
+        "question": "Вопрос",
+        "enterName": "Введите ваше имя",
+        "enterEmail": "Введите вашу почту",
+        "enterPhone": "Введите ваш номер телефона",
+        "enterQuery": "Введите ваш вопрос здесь...",
+        "sendMessage": "Отправить сообщение",
+        "optional": "(необязательно)",
+        "required": "Это поле обязательно."
+      }
+    },
+    "errors": {
+      "failed": "Неудача",
+      "error": "Ошибка",
+      "validationError": "Ошибка валидации",
+      "fieldRequired": "Это поле обязательно.",
+      "fillAllFields": "Заполните все обязательные поля перед отправкой.",
+      "connectionError": "Произошла ошибка соединения",
+      "uploadFailed": "Загрузка не удалась",
+      "processingFailed": "Обработка не удалась"
+    },
+    "file": {
+      "loading": "Загрузка",
+      "cancel": "Отменить загрузку",
+      "remove": "Удалить файл",
+      "upload": "Загрузить",
+      "failed": "Загрузка не удалась"
+    },
+    "accessibility": {
+      "chatOpened": "Чат открыт",
+      "chatClosed": "Чат закрыт",
+      "chatButtonDisabled": "Кнопка чата отключена",
+      "chatButtonEnabled": "Кнопка чата включена",
+      "chatButtonFocused": "Кнопка чата в фокусе",
+      "fullscreen": "Чат теперь на полном экране",
+      "windowed": "Чат в окне",
+      "scrollToBottom": "Прокрутить вниз",
+      "closeChat": "закрыть чат",
+      "openChat": "открыть чат"
+    }
+  },
+  "widget": {
+    "header": {
+      "aiAssistant": "ИИ Ассистент",
+      "liveAgent": "Живой агент",
+      "liveChatSupport": "Поддержка живого чата",
+      "online": "Онлайн",
+      "offline": "Оффлайн",
+      "connecting": "Подключение",
+      "connected": "Подключен к живому агенту",
+      "disconnected": "Отключен от живого агента",
+      "fullscreen": "Полный Экран",
+      "minimize": "Свернуть",
+      "close": "Закрыть чат"
+    },
+    "button": {
+      "open": "Открыть чат",
+      "close": "Закрыть чат",
+      "chat": "Чат",
+      "cancel": "Отмена",
+      "submit": "Отправить",
+      "send": "Отправить",
+      "sendMessage": "Отправить сообщение"
+    },
+    "input": {
+      "placeholder": "Введите сообщение...",
+      "typing": "печатает",
+      "send": "Отправить",
+      "attachment": "Вложение",
+      "emoji": "Эмодзи",
+      "moreOptions": "Больше опций",
+      "attachFiles": "Прикрепить файлы (или перетащить и отпустить)"
+    },
+    "messages": {
+      "agent": "Агент",
+      "aiAgent": "ИИ Агент",
+      "liveAgent": "Живой агент",
+      "typing": "Агент печатает",
+      "connecting": "Подключение к чату",
+      "connectionLost": "Соединение потеряно",
+      "socketConnected": "Сокет успешно подключен",
+      "newMessage": "Новое сообщение",
+      "unreadMessages": "непрочитанных сообщений",
+      "processing": "Обработка файлов...",
+      "processingMessage": "Обработка вашего сообщения...",
+      "pleaseWait": "Пожалуйста, подождите, пока мы готовим ваши файлы",
+      "justNow": "Прямо сейчас"
+    },
+    "forms": {
+      "preChatForm": {
+        "greeting": "Добро пожаловать! Как мы можем вам помочь?",
+        "name": "Имя",
+        "email": "Электронная почта",
+        "phone": "Номер телефона",
+        "question": "Вопрос",
+        "enterName": "Введите ваше имя",
+        "enterEmail": "Введите вашу почту",
+        "enterPhone": "Введите ваш телефон",
+        "enterQuery": "Введите ваш вопрос здесь...",
+        "optional": "(необязательно)",
+        "required": "Это поле обязательно.",
+        "sendMessage": "Отправить сообщение"
+      },
+      "postChatForm": {
+        "greeting": "Спасибо за ваш отзыв!",
+        "rating": "Оценка",
+        "feedback": "Отзыв",
+        "enterFeedback": "Введите ваш отзыв здесь...",
+        "submit": "Отправить",
+        "optional": "(необязательно)",
+        "required": "Пожалуйста, поставьте оценку."
+      },
+      "offlineChatForm": {
+        "greeting": "Извините, мы сейчас не в сети. Оставьте сообщение, и мы свяжемся с вами.",
+        "name": "Имя",
+        "email": "Электронная почта",
+        "phone": "Номер телефона",
+        "question": "Вопрос",
+        "enterName": "Введите ваше имя",
+        "enterEmail": "Введите вашу почту",
+        "enterPhone": "Введите ваш номер телефона",
+        "enterQuery": "Введите ваш вопрос здесь...",
+        "sendMessage": "Отправить сообщение",
+        "optional": "(необязательно)",
+        "required": "Это поле обязательно."
+      },
+      "badgeChatForm": {
+        "greeting": "Как мы можем вам помочь сегодня?",
+        "placeholder": "Введите ваше сообщение здесь...",
+        "send": "Отправить"
+      },
+      "userInfoForm": {
+        "title": "Информация о пользователе",
+        "name": "Имя",
+        "email": "Электронная почта",
+        "phone": "Телефон",
+        "save": "Сохранить",
+        "cancel": "Отмена"
+      }
+    },
+    "errors": {
+      "failed": "Неудача",
+      "error": "Ошибка",
+      "validationError": "Ошибка валидации",
+      "fieldRequired": "Это поле обязательно.",
+      "fillAllFields": "Заполните все обязательные поля перед отправкой.",
+      "connectionError": "Произошла ошибка соединения",
+      "uploadFailed": "Загрузка не удалась",
+      "processingFailed": "Обработка не удалась"
+    },
+    "file": {
+      "loading": "Загрузка",
+      "cancel": "Отменить загрузку",
+      "remove": "Удалить файл",
+      "upload": "Загрузить",
+      "failed": "Загрузка не удалась",
+      "dropFilesHere": "Перетащите файлы сюда для загрузки"
+    },
+    "accessibility": {
+      "chatOpened": "Чат открыт",
+      "chatClosed": "Чат закрыт",
+      "chatButtonDisabled": "Кнопка чата отключена",
+      "chatButtonEnabled": "Кнопка чата включена",
+      "chatButtonFocused": "Кнопка чата в фокусе",
+      "fullscreen": "Чат теперь на полном экране",
+      "windowed": "Чат в окне",
+      "scrollToBottom": "Прокрутить вниз",
+      "closeChat": "закрыть чат",
+      "openChat": "открыть чат",
+      "newMessages": "новые сообщения",
+      "unreadMessage": "непрочитанное сообщение"
+    },
+    "status": {
+      "connecting": "Подключение...",
+      "connected": "Подключен",
+      "disconnected": "Отключен",
+      "reconnecting": "Переподключение...",
+      "connectionLost": "Соединение потеряно"
+    },
+    "navigation": {
+      "scrollToBottom": "Прокрутить вниз",
+      "newMessages": "новые сообщения",
+      "newMessage": "новое сообщение"
+    },
+    "branding": {
+      "poweredBy": "Работает на Kogents"
+    }
+  }
+}
